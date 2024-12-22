@@ -1,0 +1,1100 @@
+/* laptop size */
+@media (max-width: 1280px) {
+  .pick-img {
+    top: 20%;
+  }
+  .pick-img img {
+    max-width: 640px;
+  }
+  .footer-nav {
+    max-width: 770px;
+  }
+  .footer-nav-inner {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+  /* sub-page : line-notice */
+  .sub-wrap .notice-left-box {
+    width: 65%;
+  }
+  .sub-wrap .notice-right-box {
+    width: 35%;
+  }
+  .sub-wrap .notice-right-inner .notice-plus {
+    left: 315px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer-awards-inner {
+    max-width: 770px;
+  }
+  .footer-awards-inner .pc-awards-slider {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .copyright-inner {
+    max-width: 1100px;
+  }
+  .copy-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1120px) {
+  /* header */
+  .logo-box {
+    left: 20px;
+  }
+  /* favorite section */
+  .fav-text01 {
+    width: 220px;
+  }
+  .fav-text02 {
+    width: 320px;
+  }
+  .pick-img img {
+    max-width: 550px;
+  }
+  /* footer */
+  .footer-awards-inner {
+    max-width: 780px;
+  }
+  .pc-awards-slider {
+    display: none;
+  }
+  .bx-wrapper:has(.tab-awards-slider) {
+    display: block;
+  }
+  footer .bx-wrapper {
+    background-color: #282828;
+  }
+  /* sub-pages : title area */
+  .title-inner {
+    width: 95%;
+  }
+  /* sub-pages : line-notice */
+  .sub-wrap .notice-left-inner {
+    margin-left: 20px;
+  }
+  /* sub-pages (coffee) : coffee banner(bxSlider) */
+  .coffee-banner .pc-slide,
+  .coffee-banner .pc-slide img {
+    height: 300px;
+  }
+  .coffee-banner .bx-controls-direction a {
+    width: 45px;
+    height: 45px;
+  }
+  .coffee-banner .bx-prev,
+  .coffee-banner .bx-next {
+    background-size: cover;
+  }
+  /* sub-pages : sub-content */
+  .sub-content.odd p {
+    right: 5%;
+  }
+  .sub-content.even p {
+    left: 5%;
+  }
+  /* sub-pages (starbucks rewards) : sub-content */
+  .rewards-bn-inner {
+    height: 300px;
+  }
+  .rewards-bn-inner > div {
+    left: 5%;
+  }
+  .rewards-02-section p {
+    width: 440px;
+  }
+}
+@media (max-width: 1045px) {
+  /* rewards section */
+  .rewards-logo {
+    width: 35%;
+    margin: 0 4rem;
+    text-align: center;
+  }
+  .rewards-logo img {
+    width: auto;
+    max-width: 100%;
+  }
+  .rewards-info {
+    padding-bottom: 20px;
+  }
+  br.tab {
+    display: block;
+  }
+  .rewards-signIn-box,
+  .gift-btn {
+    position: static;
+    margin: 0;
+  }
+  .rewards-02-section p {
+    width: 520px;
+  }
+  .rewards-02-section .pc-content-txt {
+    width: 80%;
+  }
+  .rewards-page-btn a,
+  .rewards-content-btn a {
+    width: 160px;
+    font-size: 13px;
+    padding: 0.3em 0;
+  }
+  /* sub-page (menu) :menu-products-area */
+  .product-list {
+    row-gap: 20px;
+    column-gap: 10px;
+    padding: 0 10px;
+  }
+}
+@media (max-width: 980px) {
+  /* common style */
+  .mob-view-btn {
+    font-size: 24px;
+    text-align: center;
+    width: 35vw;
+    line-height: 7vw;
+    border-radius: 2px;
+  }
+  main {
+    margin-top: 70px;
+  }
+  main.active {
+    transition: 0.4s;
+    transform: translateX(-70%);
+  }
+  /* header */
+  .main-header {
+    border-bottom: 1px solid #ddd;
+  }
+  .main-header-wrap,
+  .main-nav-wrap {
+    display: none;
+  }
+  .tablet-gnb-inner {
+    display: block;
+    height: 70px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .tablet-gnb-inner .logo-box {
+    position: static;
+  }
+  .tablet-gnb-inner .logo-box img {
+    width: 50px;
+  }
+  .tablet-gnb-list li {
+    display: inline-block;
+    height: 70px;
+    width: 50px;
+    text-align: center;
+  }
+  .tablet-gnb-list .login-link,
+  .tablet-gnb-list .store-link,
+  .tablet-gnb-list .mob-menu-btn {
+    height: 40%;
+    transform: translateY(80%);
+    cursor: pointer;
+  }
+  .tablet-gnb-list li img {
+    height: 100%;
+  }
+  .mob-menu-bcg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+  .mob-menu-bcg.active {
+    display: block;
+  }
+  .mob-menu-wrap {
+    display: block;
+    background-color: #000;
+    color: #fff;
+    width: 70%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 999;
+    transition: 0.4s;
+  }
+  .mob-menu-wrap.active {
+    right: 0;
+  }
+  .mob-menu-inner {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+  .mob-close-btn {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 50px;
+    left: -10%;
+    cursor: pointer;
+  }
+  .mob-close-btn img {
+    transition: 0.7s;
+  }
+  .mob-menu-wrap.active .mob-close-btn img {
+    transform: rotate(360deg);
+  }
+  .mob-search {
+    text-align: center;
+    background: #2d2926;
+    padding: 30px 0;
+    border-bottom: 1px solid #222;
+  }
+  .mob-search input {
+    width: 47%;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    vertical-align: top;
+    margin-right: 15px;
+    outline-color: orange;
+  }
+  .mob-search-btn {
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    background: #666;
+    color: #fff;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: normal;
+    padding: 0.5em 1em;
+  }
+  .mob-search-btn:hover {
+    text-decoration: underline;
+  }
+  .mob-menu-list li {
+    font-size: 26px;
+    padding: 20px;
+    border-bottom: 1px solid #222;
+  }
+  .mob-menu-item {
+    background-color: #111;
+  }
+  .mob-menu-item:first-child {
+    background-color: #2d2926;
+  }
+  .mob-menu-item:hover {
+    text-decoration: underline;
+  }
+  .mob-menu-list .menu-arr {
+    float: right;
+    transform: translateY(50%);
+  }
+  .mob-submenu-list {
+    display: none;
+  }
+  .mob-submenu-list li {
+    background-color: #181818;
+  }
+  /* line-notice section */
+  .notice-left-inner {
+    margin-left: 10%;
+  }
+  .notice-right-inner {
+    padding-left: 10%;
+  }
+  /* main-visual-board section */
+  .main-visual-board {
+    max-height: 2667px;
+    height: 275vw;
+    background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2024/2024_december_top_bg_mo.jpg");
+  }
+  /* special bean section */
+  .special-bean-wrap {
+    height: 200vw;
+    background: url("https://image.istarbucks.co.kr/upload/common/img/main/2024/2024_november_promotion_bg_mo.jpg")
+      no-repeat top center/cover;
+  }
+  .bean-img-box,
+  .bean-text-wrap {
+    position: static;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+  }
+  .bean-img {
+    display: none;
+  }
+  .mob-bean-img {
+    display: block;
+    width: 100%;
+  }
+  .bean-text {
+    display: none;
+  }
+  .mob-bean-text {
+    display: block;
+    width: 100%;
+  }
+  .bean-text-wrap .mob-view-btn {
+    margin-top: 50px;
+  }
+  /* reserve section */
+  .reserve-inner {
+    height: auto;
+  }
+  .reserve-title-L,
+  .reserve-img-R {
+    display: none;
+  }
+  .mob-reserve {
+    display: block;
+    min-width: 100%;
+    position: relative;
+  }
+  .mob-reserve img {
+    width: 100%;
+    margin-bottom: -10px;
+  }
+  .mob-reserve .mob-view-btn {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #c2883f;
+    border-color: #c2883f;
+  }
+  .mob-reserve .mob-view-btn:hover {
+    background-color: #c2883f;
+    color: #fff;
+    text-decoration: underline;
+  }
+  /* favorite section */
+  .favorite-wrap {
+    background: url("https://image.istarbucks.co.kr/upload/common/img/main/2024/2024_december_pick_bg_mo.jpg")
+      no-repeat center top;
+    background-size: 100% auto;
+  }
+  .favorite-inner {
+    height: 210vw;
+  }
+  .fav-text-L {
+    display: none;
+  }
+  .fav-img-R {
+    float: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 150px;
+  }
+  .pick-img {
+    position: static;
+  }
+  .pick-img img {
+    max-width: 95%;
+  }
+  .mob-fav-text {
+    text-align: center;
+    position: absolute;
+    bottom: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .mob-fav-text img {
+    margin-bottom: 40px;
+    opacity: 0;
+  }
+  .mob-fav-text01 {
+    width: 60vw;
+  }
+  .mob-fav-text02 {
+    width: 80vw;
+  }
+  .mob-fav-text .mob-view-btn {
+    opacity: 0;
+  }
+  @keyframes mob-fav-text {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes mob-fav-fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  /* magazine section */
+  .reserve-magazine-inner {
+    height: auto;
+  }
+  .magazine-text01,
+  .magazine-text02 {
+    display: none;
+  }
+  .mob-magazine-text {
+    display: block;
+    width: 100%;
+  }
+  .reserve-magazine-inner .view-more-btn {
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* store section */
+  .store-inner {
+    height: 770px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .store-inner::before {
+    transform: scale(0.8);
+    top: 31%;
+    left: 17%;
+  }
+  .store-inner::after {
+    transform: scale(0.7);
+    bottom: -15px;
+    right: 15%;
+  }
+  .store-img-1,
+  .store-img-2 {
+    transform: scale(0.85);
+    transform-origin: top;
+  }
+  .store-img-1 {
+    left: -5px;
+  }
+  .store-img-2 {
+    top: 155px;
+    left: 240px;
+  }
+  .store-text-box {
+    width: 100%;
+    text-align: center;
+  }
+  .store-text-box {
+    display: none;
+  }
+  .mob-store-text-box {
+    display: block;
+    text-align: center;
+  }
+  .mob-store-text-box img {
+    display: block;
+    max-width: 440px;
+  }
+  .mob-store-text-1 {
+    margin-bottom: 20px;
+    opacity: 0;
+  }
+  .mob-store-text-2 {
+    margin-bottom: 30px;
+    opacity: 0;
+  }
+  @keyframes mob-store-text01 {
+    0% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes mob-store-text01-disappear {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+  }
+  @keyframes mob-store-text02 {
+    0% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes mob-store-text02-disappear {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+  }
+  /* footer */
+  .footer-nav-col.footer-mob-add {
+    display: block;
+  }
+  .footer-button {
+    display: block;
+    text-align: center;
+  }
+  .footer-button a {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    width: 18%;
+    padding: 0.7em 0;
+    margin: 5px;
+  }
+
+  /* sub-pages : title-area */
+  .page-location {
+    display: none;
+  }
+  /* sub-pages : line-notice */
+  .sub-wrap .notice-right-inner {
+    padding-left: 20px;
+    background-size: 25px auto;
+    display: block;
+    position: relative;
+  }
+  .sub-wrap .notice-left-box .notice-plus,
+  .sub-wrap .notice-right-inner .notice-plus {
+    left: 85%;
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+  }
+  .sub-wrap .notice-left-box .notice-plus {
+    left: 90%;
+  }
+  .web-info-img {
+    max-width: 145px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  /* sub-pages (coffee) : coffee banner(bxSlider) */
+  .coffee-banner .pc-slide,
+  .coffee-banner .pc-slide img {
+    height: 200px;
+  }
+  /* sub-pages : sub-content section */
+  .sub-content-inner {
+    height: 200px;
+  }
+  .sub-content-inner p {
+    transform: translateY(-60%);
+  }
+  .sub-content-inner .pc-content-txt {
+    max-width: 70%;
+    margin-bottom: 15px;
+  }
+  .sub-content.odd p {
+    right: 5%;
+  }
+  .sub-content.even p {
+    left: 5%;
+  }
+  .sub-wrap .view-more-btn {
+    font-size: 12px;
+    padding: 0.5em 1.6em;
+  }
+  /* sub-page (menu) :menu-products-area */
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    column-gap: 10px;
+    padding: 0 10px;
+  }
+  .product-list a {
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+  }
+  /* sub-pages (starbucks rewards) : sub-content */
+  .rewards-bn-inner {
+    height: 200px;
+  }
+  .rewards-bn-inner > div {
+    left: 3%;
+    transform: translateY(-40%);
+  }
+  .rewards-bn-txt {
+    width: 300px;
+  }
+  .rewards-page-btn a {
+    width: 150px;
+    font-size: 12px;
+    padding: 0.5em 1em;
+  }
+  /* sub-pages (what's new) : promotion-Area */
+  .promotion-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .item-img {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 780px) {
+  /* header */
+  .mob-menu-list li {
+    font-size: 22px;
+  }
+  /* line-notice */
+  .line-notice > div {
+    width: 100%;
+  }
+  .notice-left-inner,
+  .notice-right-inner {
+    height: 13vw;
+  }
+  .notice-left-inner {
+    margin-left: 30px;
+  }
+  .notice-header {
+    width: 70px;
+    height: 70px;
+    background: url(https://www.starbucks.co.kr/common/img/common/icon_board_speaker.png)
+      no-repeat center;
+    text-indent: -1000px;
+  }
+  .notice-contents-ani a {
+    font-size: 18px;
+  }
+  .notice-plus {
+    right: 7%;
+  }
+  .notice-right-inner {
+    justify-content: center;
+    padding-left: 0;
+    gap: 20px;
+  }
+  .promotion-header {
+    font-size: 26px;
+    font-weight: 700;
+    width: 200px;
+  }
+  /* rewards section */
+  .rewards-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .rewards-logo {
+    margin-bottom: 30px;
+  }
+  .rewards-contents {
+    padding-right: 0;
+    text-align: center;
+    width: 85%;
+  }
+  br.tab {
+    display: none;
+  }
+  br.mob {
+    display: block;
+  }
+  .rewards-signIn-box a {
+    width: calc((80% - 5px) / 2);
+  }
+  .gift-btn {
+    width: 80%;
+    margin-top: 10px;
+  }
+  /* footer */
+  footer {
+    padding: 0;
+  }
+  .footer-nav {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .footer-nav::after {
+    display: none;
+  }
+  .footer-nav-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-right: 0;
+  }
+  .footer-nav-col {
+    background-color: #554c46;
+  }
+  .footer-nav-col p {
+    position: relative;
+  }
+  .footer-nav-col p:hover {
+    text-decoration: underline;
+  }
+  .footer-nav-col p::after {
+    content: "";
+    width: 20px;
+    height: 15px;
+    background: url(https://www.starbucks.co.kr/common/img/footer/mobile_footer_arrow_down.png)
+      no-repeat center;
+    background-size: 100% auto;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  .footer-nav-col p.active::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+  .footer-nav-col p,
+  .footer-nav-col li a {
+    padding-left: 15px;
+  }
+  .footer-nav-col p + ul {
+    display: none;
+  }
+  .footer-nav-col ul li {
+    background-color: #645952;
+  }
+  .footer-nav-col li:not(:last-of-type) {
+    margin-bottom: 0;
+  }
+  .footer-nav-col li a {
+    display: block;
+    font-size: 14px;
+    line-height: 3em;
+    color: #e6dbd3;
+  }
+  .footer-button {
+    margin-bottom: 20px;
+  }
+  .footer-button a {
+    font-size: 18px;
+    width: 25vw;
+  }
+  .footer-awards-inner {
+    max-width: 560px;
+  }
+  .copyright {
+    padding-bottom: 10px;
+  }
+  .copyright-inner {
+    max-width: 85%;
+  }
+  .footer-btns a {
+    font-size: 12px;
+    width: 100px;
+  }
+  .company-info li {
+    display: block;
+    line-height: 1.5em;
+  }
+  /* sub-pages : line-notice */
+  .sub-wrap .line-notice > div {
+    width: 100%;
+  }
+  .sub-wrap .notice-right-inner {
+    background: none;
+  }
+  .sub-wrap .notice-contents-ani a {
+    font-size: 14px;
+  }
+  .web-info-img {
+    display: none;
+  }
+  .mob-web-info-img {
+    display: block;
+    width: 250px;
+    transform: translateY(25px);
+  }
+  .sub-wrap .notice-left-box .notice-plus,
+  .sub-wrap .notice-right-inner .notice-plus {
+    left: 90%;
+  }
+  /* sub-pages : sub content */
+  .sub-content.odd p {
+    right: -10%;
+  }
+}
+
+@media (max-width: 640px) {
+  /* header */
+  .mob-menu-list li {
+    font-size: 18px;
+  }
+  /* footer */
+  .footer-awards-inner {
+    max-width: 200px;
+  }
+  /* sub page : common style */
+  .sub-wrap .view-more-btn {
+    font-size: 16px;
+  }
+  /* sub-pages (coffee) : banner bxslider */
+  .coffee-banner.pc-slider {
+    display: none;
+  }
+  .coffee-banner.mob-slider {
+    display: block;
+  }
+  .coffee-banner.mob-slider .bx-viewport {
+    background-color: #000;
+  }
+  .coffee-banner .mob-slide {
+    max-height: 900px;
+    width: 100%;
+  }
+  .coffee-banner .mob-slide img {
+    object-fit: cover;
+  }
+  /* sub-pages (menu, what's up) : banner bxslider */
+  .menu-banner .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager,
+  .menu-banner
+    .bx-controls.bx-has-controls-auto.bx-has-pager
+    .bx-controls-auto {
+    bottom: 10%;
+    z-index: 99;
+  }
+  .menu-banner.mob-slider .bx-viewport,
+  .what-banner.mob-slider .bx-viewport {
+    background-color: #0d6035;
+  }
+  /* sub-pages : sub-content */
+  .sub-content {
+    height: 175vw;
+    max-height: 1096px;
+  }
+  .sub-content-inner {
+    height: 100%;
+  }
+  .sub-content.odd p,
+  .sub-content.even p {
+    text-align: center;
+    width: 310px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .sub-content-inner .pc-content-txt {
+    display: none;
+  }
+  .sub-content-inner .mob-content-txt {
+    display: block;
+    width: 100%;
+    margin: 0 auto 20px;
+  }
+  .coffee-02-section .mob-content-txt {
+    width: 80%;
+  }
+  .sub-content.odd,
+  .sub-content.even {
+    background-position: center;
+  }
+  /* sub-pages (coffee) : sub-content */
+  .coffee-01-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/main_coffee_img_221114_1.jpg);
+  }
+  .coffee-02-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/coffee/m_coffee_bimg2.jpg);
+  }
+  .coffee-03-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/coffee/m_coffee_bimg3.jpg);
+  }
+  .coffee-04-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/coffee/m_coffee_bimg4.jpg);
+  }
+  /* sub-pages (menu) : sub-content */
+  .menu-01-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/menu/m_menu_bimg1.jpg);
+  }
+  .menu-02-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/menu/m_menu_bimg2.jpg);
+  }
+  .menu-03-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/menu/m_menu_bimg3.jpg);
+  }
+  .menu-04-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/menu/m_menu_bimg4.jpg);
+  }
+  .menu-05-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/main_menu_img_221114_1.jpg);
+  }
+  /* sub-pages (store) : sub-content */
+  .store-01-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/store/m_store_bn1_171109.jpg);
+  }
+  .store-02-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/main_store_img_221114_1.jpg);
+  }
+  .store-03-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/main_store_img_221114_2.jpg);
+  }
+  .store-04-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/main_store_img_221114_3.jpg);
+  }
+  /* sub-pages (responsibility) : sub-content */
+  .responsibility-01-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/m_respon_bimg5.jpg);
+  }
+  .responsibility-02-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/m_respon_bimg1.jpg);
+  }
+  .responsibility-03-section {
+    background-image: url(https://image.istarbucks.co.kr/img/event/2022/m_respon_bimg2.jpg);
+  }
+  .responsibility-04-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/responsibility/m_respon_bimg3.jpg);
+  }
+  .responsibility-05-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/responsibility/m_respon_bimg4.jpg);
+  }
+  /* sub-pages (starbucks rewards) : sub-content */
+  .rewards-banner {
+    width: 100%;
+    height: 150vw;
+    max-height: 800px;
+    background: url(https://image.istarbucks.co.kr/common/img/msr/m_msr_main.jpg)
+      no-repeat center / cover;
+  }
+  .rewards-bn-inner > div {
+    left: 50%;
+    top: 150px;
+    transform: translateX(-50%);
+  }
+  .rewards-bn-txt {
+    margin: 0 auto 20px;
+    width: 330px;
+  }
+  .rewards-banner .pc-content-txt {
+    display: none;
+  }
+  .rewards-banner .mob-content-txt {
+    display: block;
+  }
+  .rewards-page-btn {
+    width: 400px;
+    display: flex;
+    gap: 5px;
+  }
+  .rewards-page-btn a,
+  .rewards-content-btn a {
+    width: 200px;
+    border: 2px solid #000;
+    border-radius: 3px;
+    padding: 0.6em 1.2em;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+  }
+  .rewards-01-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/msr/m_msr_bimg1.jpg);
+  }
+  .rewards-02-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/msr/m_msr_bimg2.jpg);
+  }
+  /* sub-pages (what's new) : promotion-Area */
+  .promotion-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  /* sub-pages (what's new) : sub-content */
+  .viewAll-btn {
+    line-height: 70px;
+    font-size: 20px;
+  }
+  .viewAll-btn .view-arr {
+    width: 32px;
+    height: 32px;
+  }
+  .what-01-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/whatsnew/m_wh_bimg1.jpg);
+  }
+  .what-02-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/whatsnew/m_wh_bimg2.jpg);
+  }
+  .what-03-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/whatsnew/m_wh_bimg3.jpg);
+  }
+  .what-04-section {
+    background-image: url(https://image.istarbucks.co.kr/common/img/whatsnew/m_wh_bimg4.jpg);
+  }
+}
+
+@media (max-width: 540px) {
+  .rewards-info h2 {
+    font-size: 20px;
+  }
+  .rewards-info span,
+  .rewards-gift span {
+    font-size: 14px;
+  }
+  .rewards-signIn-box a {
+    font-size: 14px;
+  }
+  .mob-store-text-box img {
+    max-width: 380px;
+  }
+  .store-img-box img {
+    transform: scale(0.7);
+  }
+  .store-img-1 {
+    left: -25%;
+  }
+  .store-img-2 {
+    top: 155px;
+    left: 100px;
+  }
+  /* sub-pages (starbucks rewards) : sub-content */
+  .rewards-bn-txt {
+    margin: 0 auto 20px;
+    width: 300px;
+  }
+  .rewards-page-btn {
+    width: 300px;
+  }
+  .rewards-page-btn a,
+  .rewards-content-btn a {
+    font-size: 12px;
+  }
+  .rewards-content-btn {
+    width: 100%;
+  }
+  .rewards-content-btn a {
+    width: 48%;
+    margin-right: 9px;
+  }
+  .rewards-content-btn a:first-child {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  /* common style */
+  .mob-view-btn {
+    /* font-size: 18px; */
+    font-size: 4vw;
+    width: auto;
+    padding: 0.5em 1.8em;
+    line-height: 6vw;
+  }
+  /* favorite section */
+  .mob-fav-text img {
+    margin-bottom: 20px;
+  }
+}
