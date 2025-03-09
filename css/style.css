@@ -23,6 +23,9 @@ html{
 *{
     box-sizing: border-box;
 }
+html{
+    font-size: 62.5%;
+}
 body{
     font-family: 'NanumBarunGothic', sans-serif;
     font-size: 1.4rem;
@@ -76,6 +79,7 @@ a{
 .main-header{
     width: 100%;
     background-color: #f6f5ef;
+    border-bottom: 0.1rem solid #e4e4e4;
     position: fixed;
     top: 0;
     left: 0;
@@ -94,6 +98,7 @@ a{
 }
 .logo-box{
     height: 100%;
+    margin: 0;
     display: flex;
     align-items: center;
     position: absolute;
@@ -111,19 +116,14 @@ a{
 }
 .signin-nav-list{
     display: flex;
-    gap: 3.6rem;
 }
-.signin-nav-list .divide-bar::after{
-    content: '';
-    display: inline-block;
-    width: 1px;
-    height: 12px;
-    background-color: #e4e4e4;
-    position: relative;
-    left: 1.8rem;
-    top: 0.2rem;
+.signin-nav-list li{
+    padding-inline: 1.8rem;
 }
-
+.signin-nav-list li + li{
+    height: 100%;
+    border-left: 1px solid #e4e4e4;
+}
 .signin-nav-link{
     font-size: 12px;
     font-weight: 400;
@@ -135,34 +135,45 @@ a{
 }
 
 .top_search-btn{
-    /* width: 18rem; */
-    width: 36px;
+    width: 3.6rem;
     height: 3.6rem;
     text-align: right;
-    background-color: #fff;
+    background: #fff url('https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png') no-repeat center / 2rem auto;
     border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
     padding: 3px;
     margin: 0;
-    transition: width 0.4s ease-in-out;
-    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+.top_search-btn.active{
+    width: auto;
+    background: #fff;
 }
 .search-input{
     margin: 0;
+    width: 0;
     height: 2.6rem;
     border: none;
     font-size: 1.3rem;
-    padding: 0 0.4rem;
+    padding: 0;
+}
+.top_search-btn.active .search-input{
+    width: 14.8rem;
+    padding-left: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+.top_search-btn .top_search-icon{
     display: none;
 }
-.top_search-btn a{
+.top_search-btn.active .top_search-icon{
     display: inline-block;
-    width: 34px;
-    height: 34px;
+    width: 3.3rem;
+    height: 3.6rem;
+    object-fit: cover;
     background-color: #fff;
     display: flex;
     justify-content: center;

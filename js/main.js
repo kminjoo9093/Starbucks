@@ -3,16 +3,15 @@
 // #####################
 
 // ===== header : search button =====
+const searchBtn = document.querySelector('.top_search-btn');
+const searchInput = document.querySelector('.search-input');
 const searchIcon = document.querySelector('.top_search-icon');
-searchIcon.addEventListener('click', addSearchInput)
+
+searchBtn.addEventListener('click', addSearchInput);
 function addSearchInput(){
     // 버튼의 크기가 넓어지고, 인풋 디스플레이를 블럭으로
-    const searchBtn = document.querySelector('.top_search-btn');
-    const searchInput = document.querySelector('.search-input');
-    searchBtn.style.width = '190px';
-    // searchBtn.style.overflow = 'hidden';
-    searchInput.style.display = 'inline-block';
-    searchInput.style.transition = 'all 0.4s ease-in-out';
+    // searchBtn.style.width = '190px';
+    searchBtn.classList.add('active');
 }
 
 // ===== header : slide menu =====
@@ -122,7 +121,7 @@ const mobFavObserver = new IntersectionObserver(function(entries){
 mobFavObserver.observe(mobFavTextBox);
 
 //===== store section : slide-animation ======
-// 슬라이드 줘야하는 요소들을 묶어서 배열로 만들고, forEachfh 슬라이드아웃되는 클래스를 만든 방법 - a에는 안먹힘
+// 슬라이드 줘야하는 요소들을 묶어서 배열로 만들고, forEach로 슬라이드아웃되는 클래스를 만든 방법 - a에는 안먹힘
 // 배열 forEach로 애니메이션주는걸로 변경
 const storeSection = document.querySelector('.store-wrap'); //관찰 섹션 선택
 const storeContents = document.querySelectorAll('.store-text-box img, .store-text-box a');
