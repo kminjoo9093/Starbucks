@@ -120,7 +120,7 @@ button{
     color: #fff;
 }
 .view-more-btn.white:hover{
-    color: #222;
+    color: var(--gray_22);
     text-decoration: underline;
     background-color: #fff;
 }

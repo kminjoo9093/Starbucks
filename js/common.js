@@ -5,8 +5,6 @@ const searchIcon = document.querySelector('.top_search-icon');
 
 searchBtn.addEventListener('click', addSearchInput);
 function addSearchInput(){
-    // 버튼의 크기가 넓어지고, 인풋 디스플레이를 블럭으로
-    // searchBtn.style.width = '190px';
     searchBtn.classList.add('active');
 }
 
@@ -84,39 +82,6 @@ if (screenWidth < 780) {
 }
 
 // ======== RESPONSIVE jQuery : FOOTER AWARDS bxslider ========
-// const footerSlider = $("footer .bxslider").bxSlider({
-//   auto: true,
-//   autoControls: true,
-//   stopAutoOnClick: true,
-//   pager: false,
-//   controls: false,
-//   slideWidth: 200,
-//   minSlides: 1,
-//   maxSlides: 3
-// });
-// $(window).resize(function () {
-//   let screenWidth = $(window).width();
-//   if (screenWidth > 640 && screenWidth < 1120) {
-//     footerSlider.onSliderLoad({
-//       slideWidth: 200,
-//       minSlides: 3,
-//       maxSlides: 3,
-//       moveSlides: 3,
-//       pager: false,
-//       controls: false,
-//     });
-//   } else if (screenWidth < 640 && screenWidth > 0) {
-//     footerSlider.onSliderLoad({
-//       slideWidth: 300,
-//       minSlides: 1,
-//       maxSlides: 1,
-//       moveSlides: 1,
-//       pager: false,
-//       controls: false,
-//     });
-//   }
-// });
-
 $("footer .bxslider").bxSlider({
   auto: true,
   autoControls: true,
@@ -145,17 +110,3 @@ $("footer .bxslider").bxSlider({
     }
   },
 });
-
-// ======= login page : alert 경고 =======
-// form으로 작성한 코드라 form에서 유효성을 판단함으로 아래 코드 의미없음
-// const loginForm = document.querySelector(".login-form");
-// const inputId = loginForm.querySelector("#input-id");
-// const inputPwd = loginForm.querySelector("#input-pwd");
-// const btnLogin = loginForm.querySelector(".login-btn");
-
-// loginForm.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   if (inputId.value.length == 0) {
-//     alert("아이디를 입력해 주세요.");
-//   }
-// });

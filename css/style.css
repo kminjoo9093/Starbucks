@@ -122,7 +122,6 @@
     margin: 0;
     float: right;
     cursor: pointer;
-    /* position: relative; */
 }
 .main-nav-list li:hover{
     background-color: var(--brown_2c);
@@ -133,10 +132,10 @@
 }
 .main-nav-link{
     height: 100%;
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 400;
     text-transform: uppercase;
-    color: #333;
+    color: var(--gray_33);
     padding: 1.2rem 2.4rem;
 }
 .tablet-nav{
@@ -154,8 +153,6 @@
     z-index: 20;
 }
 .sub-nav-inner{
-    /* width: 110rem;
-    margin: 0 auto; */
     display: flex;
     gap: 8rem;
 }
@@ -574,6 +571,12 @@ br.tab, br.mob{
     height: 55rem;
     background: url(../images/25th_summer_bean_bg.jpg) no-repeat top center/cover;
 }
+.special-bean-wrap.active .bean-img-box{
+    animation: bean-img-ani 1s ease-out forwards;
+}
+.special-bean-wrap.active .bean-text-wrap{
+    animation: bean-text-ani 1s ease-out forwards;
+}
 .special-bean-inner{
     position: relative;
     top: 19%;
@@ -582,7 +585,6 @@ br.tab, br.mob{
     width: 35%;
     position: absolute;
     opacity: 0;
-    /* animation: bean-img-ani 1s ease-out forwards; */
 }
 .bean-img{
     width: 100%;
@@ -595,7 +597,6 @@ br.tab, br.mob{
     position: absolute;
     top: 10%;
     opacity: 0;
-    /* animation: bean-text-ani 1s ease-out forwards; */
 }
 .bean-text{
     display: block;
@@ -616,16 +617,6 @@ br.tab, br.mob{
         left: 22%;
     }
 }
-@keyframes bean-img-disappear {
-    0%{
-        opacity: 1;
-        left: 22%;
-    }
-    100%{
-        opacity: 0;
-        left: -10%;
-    }
-}
 @keyframes bean-text-ani {
     0%{
         opacity: 0;
@@ -634,16 +625,6 @@ br.tab, br.mob{
     100%{
         opacity: 1;
         right: 9%;
-    }
-}
-@keyframes bean-text-disappear {
-    0%{
-        opacity: 1;
-        right: 9%;
-    }
-    100%{
-        opacity: 0;
-        right: -10%;
     }
 }
 /* ============== reserve section ========== */
@@ -697,6 +678,9 @@ br.tab, br.mob{
     position: relative;
     overflow: hidden;
 }
+.favorite-wrap.active :is(.fav-text01, .fav-text02){
+    animation: fav-text 1s linear forwards;
+}
 .favorite-inner{
     height: 80rem;
 }
@@ -715,6 +699,9 @@ br.tab, br.mob{
     position: absolute;
     top: 50%;
     right: 100%;
+}
+@keyframes fav-text{
+    100%{right: 0}
 }
 .fav-text-L .view-more-btn{
     position: absolute;
@@ -816,6 +803,9 @@ br.tab, br.mob{
     left: 50%;
     z-index: 2;
 }
+.store-wrap.active :is(.store-text-1, .store-text-2, .store-text-box a){
+    animation: store-slide 1s linear forwards;
+}
 .store-text-1{
     position: absolute;
     top: 27%;
@@ -827,14 +817,14 @@ br.tab, br.mob{
     position: absolute;
     top: 45%;
     left: 0;
-    transform: translateX(53rem);
+    transform: translateX(55rem);
     z-index: 2;
 }
 .store-text-box a{
     position: absolute;
     left: 0;
     top: 75%;
-    transform: translateX(56rem);
+    transform: translateX(60rem);
     z-index: 2;
     transition: all 0.4s;
 }
@@ -848,27 +838,6 @@ br.tab, br.mob{
     100%{
         transform: translateX(0);
         opacity: 1;
-    }
-}
-
-@keyframes store-slide-disappear{
-    0%{
-        transform: translateX(0);
-        opacity: 1;
-    }
-    100%{
-        .store-text-1{
-            transform: translateX(50rem);
-            opacity: 0;
-        }
-        .store-text-2{
-            transform: translateX(53rem);
-            opacity: 0;
-        }
-        .store-inner a{
-            transform: translateX(56rem);
-            opacity: 0;
-        }
     }
 }
 

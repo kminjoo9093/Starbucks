@@ -287,6 +287,9 @@
   }
   .mob-menu-item {
     background-color: var(--gray_11);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .mob-menu-item:first-child {
     background-color: var(--brown_2d);
@@ -294,9 +297,8 @@
   .mob-menu-item:hover {
     text-decoration: underline;
   }
-  .mob-menu-list .menu-arr {
-    float: right;
-    transform: translateY(50%);
+  .mob-menu-item.active .menu-arr {
+    transform: rotate(180deg);
   }
   .mob-submenu-list {
     display: none;
@@ -335,7 +337,7 @@
   .main-visual-board {
     max-height: 260rem;
     height: 270vw;
-    padding-block: 4rem;
+    padding-block: 10rem;
     background: url(../images/25th_top_bg_mo.png) no-repeat center / cover;
   }
   .visual-board-inner{
@@ -352,7 +354,7 @@
     width: 100%;
   }
   .L-slogan-box img{
-    width: 40%;
+    width: 35%;
   }
   .L-slogan-box .view-more-btn{
     display: none;
@@ -377,7 +379,7 @@
     left: auto;
   }
   .drink-img:nth-child(1){top: 0;}
-  .drink-img:nth-child(2){top: 20%; right: -10%;}
+  .drink-img:nth-child(2){top: 15%; right: -10%;}
   .drink-img:nth-child(3){top: 45%;}
   .drink-img:nth-child(4){top: 65%; right: -5%; width: 45vw;}
   /* special bean section */
@@ -476,6 +478,18 @@
     margin-bottom: 4rem;
     opacity: 0;
   }
+  .favorite-wrap.active :is(.mob-fav-text01, .mob-fav-text02, .mob-view-btn){
+    animation: mob-fav-text 1s linear forwards;
+  }
+  .favorite-wrap.active .mob-fav-text01{
+    animation-delay: 0.5s;
+  }
+  .favorite-wrap.active .mob-fav-text02{
+    animation-delay: 1s;
+  }
+  .favorite-wrap.active .mob-view-btn{
+    animation-delay: 1.5s;
+  }
   .mob-fav-text01 {
     width: 60vw;
   }
@@ -491,14 +505,6 @@
     }
     100% {
       opacity: 1;
-    }
-  }
-  @keyframes mob-fav-fadeOut {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
     }
   }
   /* magazine section */
@@ -561,6 +567,9 @@
     display: block;
     max-width: 44rem;
   }
+  .store-wrap.active :is(.mob-store-text-1, .mob-store-text-2){
+    animation: mob-store-text 1s linear forwards;
+  } 
   .mob-store-text-1 {
     margin-bottom: 2rem;
     opacity: 0;
@@ -569,7 +578,7 @@
     margin-bottom: 3rem;
     opacity: 0;
   }
-  @keyframes mob-store-text01 {
+  @keyframes mob-store-text {
     0% {
       opacity: 0;
       transform: translateY(-20rem);
@@ -577,36 +586,6 @@
     100% {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-  @keyframes mob-store-text01-disappear {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-20rem);
-    }
-  }
-  @keyframes mob-store-text02 {
-    0% {
-      opacity: 0;
-      transform: translateY(20rem);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes mob-store-text02-disappear {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(20rem);
     }
   }
   /* footer */
