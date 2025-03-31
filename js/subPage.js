@@ -48,7 +48,6 @@ $('.cor-sales-subNav > li span').click(function(){
 })
 
 // what's new page : 전체보기 클릭 -> 프로모션 보기 닫기 토글
-// 다른 컨텐츠에 적용할 수 있으면 모두 적용하는걸로 바꾸기
 function toggleVisibility(section){
   section.classList.toggle('active');
 }

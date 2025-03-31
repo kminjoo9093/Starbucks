@@ -1,67 +1,40 @@
-// #####################
-// main page functions
-// #####################
-
-// ===== header : search button =====
-const searchBtn = document.querySelector('.top_search-btn');
-const searchInput = document.querySelector('.search-input');
-const searchIcon = document.querySelector('.top_search-icon');
-
-searchBtn.addEventListener('click', addSearchInput);
-function addSearchInput(){
-    // 버튼의 크기가 넓어지고, 인풋 디스플레이를 블럭으로
-    // searchBtn.style.width = '190px';
-    searchBtn.classList.add('active');
-}
-
-// ===== header : slide menu =====
-$(function(){
-    $('.main-nav-link').mouseover(function(){
-        $(this).siblings('.sub-nav-wrap').stop().slideDown(400)
-    })
-    $('.main-nav-list li').mouseleave(function(){
-        $('.sub-nav-wrap').stop().slideUp(400)
-    })
-})
-
 // ===== promotion-area : 프로모션 배너 bxslider =====
-
-const allSlides = document.querySelectorAll('.slider5 .slide');
-const viewportCenterX = window.innerWidth / 2;
-
-slider = $('.slider5').bxSlider({
+$('.promotion-slider').bxSlider({
     auto: true,
     autoControls: true,
     stopAutoOnClick: true,
     autoControlsCombine: true,
     pager: true,
     slideWidth: 800,
-    minSlides: 2,
-    maxSlides: 2,
+    minSlides: 1,
+    maxSlides: 1,
     moveSlides: 1,
     slideMargin: 10,
+    onSliderLoad: function(){
+        const allSlides = document.querySelectorAll('.promotion-slider .slide');
+        allSlides[1].classList.add('active');
+    },
     onSlideAfter: function($slideElement, oldIndex, newIndex) {
-        allSlides.forEach((slide)=>{
-            // slide.style.opacity = 0.5;
-            const slideStartX = slide.getBoundingClientRect().left;
-            const slideEndX = slideStartX + slide.offsetWidth;
-            if(viewportCenterX > slideStartX && viewportCenterX < slideEndX){
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        })
+        $('.promotion-slider .slide').removeClass('active');
+        $slideElement.addClass('active');
     }
-});
+})
 
 // ===== promotion-area : 프로모션 더보기 =====
-const $promotionArea = $('.promotion-area');
-// $promotionArea.css('display', 'none')
+const promotionArea = $('.promotion-area');
 $('.notice-right-inner').click(function(){
-    $promotionArea.toggleClass('active')
+    promotionArea.toggleClass('active')
     $('.view-promotion-btn').toggleClass('active')
-    // $promotionArea.stop().slideToggle()
 })
+
+// 열기 닫기 버튼 화살표 변경
+function rotateArrow(arrowImg){
+    if(arrowImg.style.transform === 'rotate(180deg) translateY(-8px)'){
+      arrowImg.style.transform = 'rotate(0) translateY(8px)'
+    }else{
+    arrowImg.style.transform = 'rotate(180deg) translateY(-8px)'
+    };
+  }
 
 //===== special bean section : slide-animation ======
 //slide in/out 따로 animation 만드는 방법
@@ -128,8 +101,6 @@ const storeContents = document.querySelectorAll('.store-text-box img, .store-tex
 const mobStoreText01 = document.querySelector('.mob-store-text-1');
 const mobStoreText02 = document.querySelector('.mob-store-text-2');
 
-console.log(storeContents);
-
 const storeObserver = new IntersectionObserver(function(entries){
     entries.forEach((e)=>{
         if(e.isIntersecting){
@@ -149,19 +120,3 @@ const storeObserver = new IntersectionObserver(function(entries){
 })
 
 storeObserver.observe(storeSection); //관찰자 관찰대상 연결하며 관찰명령
-
-// 열기 닫기 버튼 화살표 변경
-function rotateArrow(arrowImg){
-    if(arrowImg.style.transform === 'rotate(180deg) translateY(-8px)'){
-      arrowImg.style.transform = 'rotate(0) translateY(8px)'
-    }else{
-    arrowImg.style.transform = 'rotate(180deg) translateY(-8px)'
-    };
-  }
-
-// ======== footer year =======
-const year = document.querySelector('.year');
-const currentYear = new Date().getFullYear();
-year.textContent = currentYear;
-
-// ======== RESPONSIVE JS : store section text slide ========

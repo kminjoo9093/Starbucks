@@ -1,89 +1,13 @@
-/* 16px = 1rem.   10px=>1rem으로 만드려면 10은 16의 62.5%*/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 300;
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'NanumBarunGothic';
-    font-style: normal;
-    font-weight: 400;
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
-    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
-}
-
-html{
-    /* 10px = 1rem */
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-*{
-    box-sizing: border-box;
-}
-html{
-    font-size: 62.5%;
-}
-body{
-    font-family: 'NanumBarunGothic', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 400;
-    margin: 0;
-}
-#wrap{
-    width: 100%;
-}
-ul{
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-}
-a{
-    text-decoration: none;
-    display: inline-block;
-    color: inherit;
-}
-
-/* ========== common style ========== */
-.section-inner-width{
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.view-more-btn{
-    font-size: 16px;
-    border: 2px solid #000;
-    border-radius: 4px;
-    padding: 0.9rem 2.6rem;
-    transition: all 0.4s;
-}
-.view-more-btn.black{
-    color: #000;
-}
-.view-more-btn.black:hover{
-    color: #fff;
-    text-decoration: underline;
-    background-color: #000;
-}
-.view-more-btn.white{
-    border-color: #fff;
-    color: #fff;
-}
-.view-more-btn.white:hover{
-    color: #222;
-    text-decoration: underline;
-    background-color: #fff;
-}
 /* ========== header ========== */
 .main-header{
     width: 100%;
-    background-color: #f6f5ef;
-    border-bottom: 0.1rem solid #e4e4e4;
+    background-color: var(--beige_f6);
+    border-bottom: 0.1rem solid var(--beige_e4);
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+    border-top: .2rem solid #000;
 }
 .tablet-gnb-inner,
 .mob-menu-bcg,
@@ -91,28 +15,34 @@ a{
     display: none;
 }
 .main-header-wrap{
-    max-width: 1100px;
-    height: 120px;
-    margin: 0 auto;
+    /* max-width: 110rem;
+    margin: 0 auto; */
+    height: 12rem;
     position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 .logo-box{
     height: 100%;
     margin: 0;
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 0;
     z-index: 1;
+}
+.logo-box img{
+    width: 100%;
+}
+.header-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .top_signin-wrap{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2.4rem;
-    position: absolute;
-    top: 4px;
-    right: 42px;
+    padding-right: 5rem;
+    padding-top: 1rem;
 }
 .signin-nav-list{
     display: flex;
@@ -122,32 +52,29 @@ a{
 }
 .signin-nav-list li + li{
     height: 100%;
-    border-left: 1px solid #e4e4e4;
+    border-left: .1rem solid var(--beige_e4);
 }
 .signin-nav-link{
-    font-size: 12px;
+    font-size: 1.2rem;
     font-weight: 400;
-    color: #555;
-    cursor: pointer;
+    color: var(--gray_55);
 }
 .signin-nav-link:hover{
     text-decoration: underline;
 }
-
 .top_search-btn{
     width: 3.6rem;
     height: 3.6rem;
     text-align: right;
-    background: #fff url('https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png') no-repeat center / 2rem auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 3px;
+    background: #fff url('../images/icon_search.png') no-repeat center / 2rem auto;
+    border: .1rem solid var(--gray_cc);
+    border-radius: .5rem;
+    padding: .3rem;
     margin: 0;
     display: flex;
     align-items: center;
     gap: 0.4rem;
     overflow: hidden;
-    cursor: pointer;
 }
 .top_search-btn.active{
     width: auto;
@@ -180,22 +107,14 @@ a{
     align-items: center;
 }
 .main-nav-wrap{
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
 }
 .main-nav-inner{
-    max-width: 110rem;
     margin: auto;
-    /* 자식요소에 float으로 사라진 높이 찾기 위해 */
     overflow: hidden; 
-    /* position: relative; */
-    /* background-color: #7887da; */
 }
 .main-nav-list{
-    width: 895px;
-    height: 66px;
+    height: 6.6rem;
     display: flex;
     justify-content: flex-end;
     gap: 0;
@@ -203,51 +122,42 @@ a{
     margin: 0;
     float: right;
     cursor: pointer;
-    /* background-color: #6fe09a; */
-    /* top: 6px; */
+    /* position: relative; */
 }
 .main-nav-list li:hover{
-    background-color: #2c2a29;
+    background-color: var(--brown_2c);
 }
 .main-nav-list li:hover .main-nav-link{
-    color: #669900;
+    color: var(--green_66);
     text-decoration: underline;
 }
 .main-nav-link{
+    height: 100%;
     font-size: 13px;
     font-weight: 400;
     text-transform: uppercase;
     color: #333;
     padding: 1.2rem 2.4rem;
 }
-
+.tablet-nav{
+    display: none;
+}
 /** ========= sub-nav ======== **/
 .sub-nav-wrap{
-    width: 100%;
+    width: 100vw;
     display: none;
     align-items: center;
     position: absolute;
     left: 0;
-    top: 66px;
-    background-color: #2c2a29;
+    top: 100%;
+    background-color: var(--brown_2c);
     z-index: 20;
-
-    /* js로 컨트롤 할 경우 */
-    /* opacity: 0;
-    visibility: hidden; 
-    height: 0;*/
-
-    /* css로 컨트롤 */
-    /* transform-origin: top; */
-    /* transform: scaleY(0); */
-    /* transition: 0.4s ease-in; */
 }
 .sub-nav-inner{
-    width: 110rem;
-    margin: auto;
+    /* width: 110rem;
+    margin: 0 auto; */
     display: flex;
     gap: 8rem;
-    /* background-color: #bd8888; */
 }
 .sub-nav-col{
     padding: 1.8rem 3.6rem 1.8rem 0;
@@ -264,115 +174,96 @@ a{
 .sub-nav-col > a{
     font-size: 1.2rem;
     line-height: 1.2;
-    color: #999;
+    color: var(--gray_99);
     display: block;
     margin-bottom: 0.8rem;
 }
 .sub-nav-col a:hover{
     text-decoration: underline;
 }
-.main-nav-list li:hover .sub-nav-wrap{
-    /* js로 컨트롤 */
-    /* opacity: 1;
-    visibility: visible; */
-
-    /* css로 컨트롤 */
-    /* height: auto;
-    display: block; */
-    /* transform: scaleY(1); */
-}
-
 
 /** ========= main-visual-board section ======== **/
 main{
-    margin-top: 120px;
+    margin-top: 12rem;
 }
 .main-visual-board{
     width: 100%;
-    /* 높이 부여할 때 너비를 뷰포트너비를 기준으로 할 수 있음 */
     height: 32vw; 
-    background-image: url('https://image.istarbucks.co.kr/upload/common/img/main/2024/25th_top_bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: url(../images/25th_top_bg.png) no-repeat center / cover;
     position: relative;
     overflow: hidden;
 }
-
+.visual-board-inner{
+    padding-inline: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+.visual-board-inner .mob-view-btn{
+    display: none;
+}
 .L-slogan-box{
-    width: 20%;
-    /* height: 100%; */
+    width: 25%;
+    padding-inline: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2.8rem;
-    position: absolute;
-    top: 19%;
-    left: 13%;
 }
 .L-slogan-box img{
-    /* width: 22.4rem; */
-    width: 13vw;
+    width: 100%;
     opacity: 0;
     animation: fadeIn 1s 0.2s forwards;
 }
 .L-slogan-box .view-more-btn{
-    color: #13362d;
-    border: 2px solid #13362d;
-    border-radius: 6px;
+    color: var(--green_13);
+    border: 0.2rem solid var(--green_13);
+    border-radius: .6rem;
     transition: all 0.3s;
     opacity: 0;
     animation: fadeIn 1s 3s forwards;
 }
 .L-slogan-box .view-more-btn:hover{
     color: #fff;
-    background-color: #13362d;
+    background-color: var(--green_13);
     text-decoration: underline;
     text-decoration-color: #fff;
 }
 .R-drinks-box{
-    width: 80%;
+    width: 75%;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 36%;
+    position: relative;
 }
 .drink-img{
     opacity: 0;
     animation: fadeIn 2s forwards;
 }
 .drink-img:nth-child(1){
-    /* 반응형을 가로로 줄어드는게 더 중요하니까 이미지 크기 width로 줘야 반응형에 영향이 감 */
-    /* height: 37rem; */
-    /* height: 67%; */
-    width: 15.5%;
+    width: 25%;
     position: absolute;
     top: 15%;
 }
 .drink-img:nth-child(2){
+    width: 27%;
     position: absolute;
-    /* height: 70%; */
-    width: 17%;
     top: 15%;
-    left: 11.5%;
+    left: 18%;
 }
 
 .drink-img:nth-child(3){
-    /* margin-left: -80px; */
-    width: 19%;
+    width: 30%;
     position: absolute;
     top: 15%;
-    left: 23%;
-}
-.drink-img:nth-child(4){
-    /* height: 26rem; */
-    width: 21%;
-    position: absolute;
-    top: 24%;
     left: 38%;
 }
-
+.drink-img:nth-child(4){
+    width: 33%;
+    position: absolute;
+    top: 24%;
+    left: 62%;
+}
 @keyframes fadeIn {
     0%{opacity: 0;}
     100%{opacity: 1;}   
@@ -396,7 +287,7 @@ main{
     overflow: hidden;
 }
 .notice-left-box{
-    background-color: #111;
+    background-color: var(--gray_11);
     color: #fff;
     width: 55%;
     float: left;
@@ -404,33 +295,32 @@ main{
 }
 .notice-left-inner{
     margin-left: 30%;
-    height: 62px;
+    height: 6.2rem;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 1.2rem;
 }
 .notice-header{
-    font-size: 18px;
-    line-height: 62px;
+    font-size: 1.8rem;
+    line-height: 6.2rem;
     white-space: nowrap;
 }
 .notice-contents{
     width: 60%;
-    height: 24px;
+    height: 2.4rem;
     overflow: hidden;
 }
 .notice-contents-ani{
     display: flex;
     flex-direction: column;
-    height: 96px;
+    height: 9.6rem;
 }
 .notice-contents-ani a{
-    /* display: block; */
-    font-size: 14px;
-    background-color: #111;
-    padding: 4px;
+    font-size: 1.4rem;
+    background-color: var(--gray_11);
+    padding: .4rem;
     width: 100%;
-    height: 24px;
+    height: 2.4rem;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -447,26 +337,15 @@ main{
     /* 이미지 크기조절, 위치설정이 더 용이해서 백그라운드로 */
     position: absolute;
     top: 50%;
-    right: 24px;
+    right: 2.4rem;
     transform: translateY(-50%);
-    width: 36px;
-    height: 36px;
-    background-image: url('https://www.starbucks.co.kr/common/img/common/btn_notice_plus.png');
-    background-size: 36px 36px;
-    background-repeat: no-repeat;
+    width: 3.6rem;
+    aspect-ratio: 1;
+    background: url(../images/icon_plus.png) no-repeat center / 100% auto;
 }
 .view-promotion-btn.active img{
     transform: rotate(180deg);
 }
-/* .notice-plus a{
-    display: inline-block;
-    width: 36px;
-    height: 36px;
-    background-image: url('https://www.starbucks.co.kr/common/img/common/btn_notice_plus.png');
-    background-size: 36px 36px;
-    background-repeat: no-repeat;
-} */
-
 .notice-right-box{
     float: left;
     background-color: #f6f5ef;
@@ -474,7 +353,7 @@ main{
 }
 .notice-right-inner{
     width: 100%;
-    height: 62px;
+    height: 6.2rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -482,10 +361,10 @@ main{
     cursor: pointer;
 }
 .promotion-header{
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #333;
-    width: 200px;
+    color: var(--gray_33);
+    width: 20rem;
 }
 .notice-right-box span{
     display: inline-block;
@@ -495,31 +374,34 @@ main{
     width: 100%;
     padding: 0;
     position: relative;
-    background-color: #f6f5ef;
+    background-color: var(--beige_f6);
     height: 0;
     overflow: hidden;
     transition: 0.3s;
 }
 .promotion-area.active{
-    padding: 40px 0 70px;
+    padding: 4rem 0 7rem;
     height: auto;
 }
 .bx-wrapper{
-    max-width: 100% !important;
     border: none;
-    margin: 0;
     box-shadow: none;
     position: relative;
-    background-color: #f6f5ef;
+    background-color: var(--beige_f6);
+    margin: 0 auto;
 }
 .promotion-area .bx-viewport{
     overflow: visible !important;
-    background-color: #f6f5ef;
-    transform: translateX(-20%);
-    z-index: 99;
+    background-color: var(--beige_f6);
+    z-index: 999;
 }
-.slide{
+.promotion-slider{
+    height: 100%;
     position: relative;
+    overflow: visible;
+}
+.promotion-slider .slide{
+    position: absolute;
 }
 .slide img{
     opacity: 0.5;
@@ -527,14 +409,14 @@ main{
 .slide.active img{
     opacity: 1;
 }
-.slide button{
-    font-size: 16px;
-    padding: 8px 26px;
-    border: 2px solid #000;
+.promotion-slider .slide button{
+    font-size: 1.6rem;
+    padding: .8rem 2.6rem;
+    border: .2rem solid #000;
     background-color: transparent;
-    border-radius: 3px;
+    border-radius: .3rem;
     position: absolute;
-    bottom: 5px;
+    bottom: .5rem;
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
@@ -546,63 +428,63 @@ main{
     text-decoration: underline;
 }
 .bx-wrapper .bx-controls-direction a{
-    width: 50px;
-    height: 50px;
-    border: 2px solid #000;
+    width: 5rem;
+    height: 5rem;
+    border: .2rem solid #000;
     border-radius: 50%;
     transition: 0.4s;
     z-index: 999;
 }
-.bx-wrapper .bx-controls-direction a:hover{
+.promotion-area .bx-controls-direction a:hover{
     background-color: #fff;
 }
-.bx-wrapper .bx-prev,
-.bx-wrapper .bx-next{
-    background: url(https://www.starbucks.co.kr/common/img/common/arrow_left_on.png) no-repeat center left 15px;
+.promotion-area .bx-prev,
+.promotion-area .bx-next{
+    background: url(../images/arrow_left_on.png) no-repeat center left 1.5rem;
 }
-.bx-wrapper .bx-prev{
-    left: 20%;
+.promotion-area .bx-prev{
+    left: -10%;
 }
-.bx-wrapper .bx-next{
+.promotion-area .bx-next{
     transform: rotate(180deg);
-    right: 20%;
+    right: -10%;
 }
 .bx-wrapper .bx-prev:focus,
 .bx-wrapper .bx-prev:hover,
 .bx-wrapper .bx-next:focus,
 .bx-wrapper .bx-next:hover {
-    background-position: center left 15px;
+    background-position: center left 1.5rem;
 }
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
     width: 100%;
     text-align: center;
-    bottom: -35px;
-    transform: translateX(15px);
+    bottom: -3.5rem;
+    transform: translateX(1.5rem);
 }
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
     right: 50%;
-    bottom: -35px;
+    bottom: -3.5rem;
 }
 .bx-wrapper .bx-pager.bx-default-pager a{
-    width: 12px;
-    height: 12px;
+    width: 1.2rem;
+    height: 1.2rem;
     border-radius: 50%;
-    border: 3px solid transparent;
-    margin: 0 4px;
+    border: .3rem solid transparent;
+    margin: 0 0.4rem;
 }
 .bx-wrapper .bx-pager.bx-default-pager a.active{
     background-color: transparent;
-    border-color: #00704a;
+    border-color: var(--green_00);
 }
 /* ============== rewards section ========== */
 .rewards-wrap{
     max-width: 100%;
-    background-color: #1e3932;
+    background-color: var(--green_1e);
     color: #fff;
-    padding: 42px 0;
+    padding: 4.2rem 0;
 }
 .rewards-inner{
-    max-width: 1080px;
+    max-width: 108rem;
     margin: auto;
     display: flex;
     align-items: start;
@@ -612,7 +494,7 @@ main{
     display: block;
 }
 .rewards-logo{
-    width: 176px;
+    width: 17.6rem;
     margin: 0 4rem;
 }
 .rewards-logo img{
@@ -624,18 +506,18 @@ main{
 }
 .rewards-info{
     margin-bottom: 2rem;
-    border-bottom: 1px solid #4b615b;
+    border-bottom: .1rem solid var(--green_4b);
     overflow: hidden;
     position: relative;
 }
 .rewards-info h2{
-    font-size: 26px;
+    font-size: 2.6rem;
     font-weight: 500;
     line-height: 1.5em;
     margin: 0;
 }
 .rewards-info span{
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.6em;
 }
@@ -649,35 +531,35 @@ br.tab, br.mob{
     right: 0%;
 }
 .rewards-signIn-box a{
-    font-size: 15px;
+    font-size: 1.5rem;
     padding: 1rem 2.4rem;
 }
 .rewards-signIn-box a:hover{
     text-decoration: underline;
 }
 .rewards-signIn-box a:first-child{
-    background-color: #00704a;
-    border-radius: 6px;
+    background-color: var(--green_007);
+    border-radius: var(--radius_btn_6);
     margin-right: 0.5rem;
 }
 .rewards-signIn-box a:last-child{
-    box-shadow: inset 0 0 0 2px #fff;
-    border-radius: 6px;
+    box-shadow: inset 0 0 0 .2rem #fff;
+    border-radius: var(--radius_btn_6);
 }
 .rewards-gift{
     position: relative;
 }
 .rewards-gift span{
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 500;
     letter-spacing: 0.5px;
     line-height: 1.6em;
 }
 .gift-btn{
-    font-size: 14px;
+    font-size: 1.4rem;
     padding: 1rem;
-    box-shadow: inset 0 0 0 2px #fff;
-    border-radius: 6px;
+    box-shadow: inset 0 0 0 .2rem #fff;
+    border-radius: var(--radius_btn_6);
     position: absolute;
     top: 0;
     right: 0;
@@ -689,8 +571,8 @@ br.tab, br.mob{
 /* ============== special bean section ========== */
 .special-bean-wrap{
     width: 100%;
-    height: 550px;
-    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2024/25th_summer_bean_bg.jpg') no-repeat top center/cover;
+    height: 55rem;
+    background: url(../images/25th_summer_bean_bg.jpg) no-repeat top center/cover;
 }
 .special-bean-inner{
     position: relative;
@@ -764,17 +646,14 @@ br.tab, br.mob{
         right: -10%;
     }
 }
-
-
 /* ============== reserve section ========== */
 .reserve-wrap{
     width: 100%;
-    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2024/240521_pc_reserve_bg_1.jpg') no-repeat center top;
-    background-size: cover;
+    background: url(../images/reserve_bg_pc.jpg) no-repeat center top / cover;
 }
 .reserve-inner{
-    max-width: 1080px;
-    height: 400px;
+    max-width: 108rem;
+    height: 40rem;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -795,14 +674,13 @@ br.tab, br.mob{
     margin: 0;
 }
 .reserve-title-L .view-more-btn{
-    /* display: block; */
     font-weight: 500;
-    color: #b87643;
-    border-color: #b87643;
+    color: var(--brown_b8);
+    border-color: var(--brown_b8);
 }
 .reserve-title-L .view-more-btn:hover{
     color: #fff;
-    background-color: #b87643;
+    background-color: var(--brown_b8);
 }
 .reserve-img-R{
     width: 100vw;
@@ -815,12 +693,12 @@ br.tab, br.mob{
 /* ============== favorite section ========== */
 .favorite-wrap{
     width: 100%;
-    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2024/2024_august_pick_bg.jpg') no-repeat center/cover fixed;
+    background: url(../images/pick_bg_pc.png) no-repeat center/cover fixed;
     position: relative;
     overflow: hidden;
 }
 .favorite-inner{
-    height: 800px;
+    height: 80rem;
 }
 .fav-text-L{
     position: relative;
@@ -855,20 +733,18 @@ br.tab, br.mob{
     left: 10%;
 }
 .pick-img img{
-    max-width: 900px;
+    max-width: 90rem;
 }
 
 /* ============== magazine section ========== */
 .reserve-magazine-wrap{
     width: 100%;
-    background: url('https://image.istarbucks.co.kr/upload/common/img/main/2021/reserve_bg_pc.png') no-repeat top 50px center;
-    background-size: auto 353px;
+    background: url(../images/magazine_bg_pc.png) no-repeat top 5rem center / auto 35.3rem;
 }
 .reserve-magazine-inner{
-    height: 400px;
+    height: 40rem;
     position: relative;
 }
-
 .magazine-text01{
     position: absolute;
     top: 35%;
@@ -892,39 +768,39 @@ br.tab, br.mob{
 /* ============== store section ========== */
 .store-wrap{
     width: 100%;
-    background: url('https://www.starbucks.co.kr/common/img/main/store_bg.jpg') no-repeat center / cover;
+    background: url(../images/store_bg_pc.jpg) no-repeat center / cover;
     overflow: hidden;
 }
 .store-inner{
-    height: 400px;
+    height: 40rem;
     display: flex;
     position: relative;
 }
 .store-inner::before{
     content: '';
-    width: 343px;
-    height: 142px;
-    background-image: url('https://www.starbucks.co.kr/common/img/main/store_exp_img03.png');
+    width: 34.3rem;
+    height: 14.2rem;
+    background-image: url(../images/store_img_1.png);
     position: absolute;
     top: -15%;
     left: 40%;
 }
 .store-inner::after{
     content: '';
-    width: 230px;
-    height: 104px;
-    background-image: url('https://www.starbucks.co.kr/common/img/main/store_exp_img04.png');
+    width: 23rem;
+    height: 10.4rem;
+    background-image: url(../images/store_img_2.png);
     position: absolute;
-    bottom: -3px;
+    bottom: -0.3rem;
     right: -6%;
 }
 .store-img-box{
-    height: 400px;
+    height: 40rem;
     width: 60%;
     position: relative;
 }
 .store-text-box{
-    height: 400px;
+    height: 40rem;
     width: 40%;
     position: relative;
 }
@@ -944,21 +820,21 @@ br.tab, br.mob{
     position: absolute;
     top: 27%;
     left: 0;
-    transform: translateX(500px);
+    transform: translateX(50rem);
     z-index: 2;
 }
 .store-text-2{
     position: absolute;
     top: 45%;
     left: 0;
-    transform: translateX(530px);
+    transform: translateX(53rem);
     z-index: 2;
 }
 .store-text-box a{
     position: absolute;
     left: 0;
     top: 75%;
-    transform: translateX(560px);
+    transform: translateX(56rem);
     z-index: 2;
     transition: all 0.4s;
 }
@@ -982,40 +858,38 @@ br.tab, br.mob{
     }
     100%{
         .store-text-1{
-            transform: translateX(500px);
+            transform: translateX(50rem);
             opacity: 0;
         }
         .store-text-2{
-            transform: translateX(530px);
+            transform: translateX(53rem);
             opacity: 0;
         }
         .store-inner a{
-            transform: translateX(560px);
+            transform: translateX(56rem);
             opacity: 0;
         }
     }
 }
 
-
 /* ============ footer =========== */
 footer{
     width: 100%;
-    background-color: #2C2A29;
+    background-color: var(--brown_2c);
     color: #fff;
-    padding: 40px 0;
+    padding: 4rem 0;
 }
 .footer-nav{
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
     position: relative;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 .footer-nav::after{
     content: '';
-    width: 15px;
-    height: 142px;
-    background: url('https://www.starbucks.co.kr/common/img/footer/footer_logo.png') no-repeat center center;
-    background-size: 14px 142px;
+    width: 1.5rem;
+    height: 14.2rem;
+    background: url(../images/footer_logo.png) no-repeat center center / auto 100%;
     position: absolute;
     top: 0;
     right: 0;
@@ -1023,13 +897,12 @@ footer{
 .footer-nav-inner{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    padding-right: 30px;
+    padding-right: 3rem;
 }
 .footer-nav-col.footer-mob-add{
     display: none;
 }
 .footer-nav-col p{
-    /* margin: 0; */
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.4rem;
     letter-spacing: 0.2px;
@@ -1037,10 +910,10 @@ footer{
     text-transform: uppercase;
 }
 .footer-nav-col li:not(:last-of-type){
-    margin-bottom: 7px;
+    margin-bottom: .7rem;
 }
 .footer-nav-col li a{
-    font-size: 13px;
+    font-size: 1.3rem;
     font-weight: 500;
 }
 .footer-nav-col li a:hover{
@@ -1051,19 +924,19 @@ footer{
 }
 .footer-awards{
     width: 100%;
-    background-color: #282828;
-    padding: 20px 0;
-    margin-bottom: 30px;
+    background-color: var(--brown_28);
+    padding: 2rem 0;
+    margin-bottom: 3rem;
 }
 .footer-awards-inner, .copyright-inner{
-    max-width: 1200px;
+    max-width: 120rem;
     margin: 0 auto;
 }
 .pc-awards-slider, 
 .copy-menu{
     display: flex;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 1rem;
 }
 .bx-wrapper:has(.tab-awards-slider){
     display: none;
@@ -1075,53 +948,53 @@ footer{
     position: relative;
 }
 .copy-menu li:not(:last-child){
-    border-right: 1px solid #393939;
+    border-right: .1rem solid var(--brown_39);
 }
 .copy-menu a{
-    font-size: 12px;
+    font-size: 1.2rem;
     line-height: 1.5em;
     letter-spacing: 0.1px;
-    padding: 5px 9px;
-    color: #ccc;
+    padding: .5rem 0.9rem;
+    color: var(--gray_cc);
 }
 .copy-menu a:hover{
     text-decoration: underline;
 }
 .copy-menu a.green-txt{
-    color: #00b050;
+    color: var(--green_00b);
 }
 .footer-btns{
     text-align: center;
-    margin: 20px 0 30px;
+    margin: 2rem 0 3rem;
 }
 .footer-btns a{
-    font-size: 13px;
-    border: 2px solid #fff;
-    width: 110px;
-    padding: 8px 0;
-    border-radius: 4px;
+    font-size: 1.3rem;
+    border: .2rem solid #fff;
+    width: 11rem;
+    padding: .8rem 0;
+    border-radius: .4rem;
 }
 .footer-btns a:not(:last-child){
-    margin-right: 5px;
+    margin-right: .5rem;
 }
 .footer-btns a:hover{
     text-decoration: underline;
 }
 .company-info {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 .company-info li{
     display: inline-block;
     font-size: 1.3rem;
-    color: #999;
-    margin-right: 15px;
+    color: var(--gray_99);
+    margin-right: 1.5rem;
 }
 .company-info li:last-child{
     margin-right: 0;
 }
 .copyright-txt{
-    font-size: 12px;
+    font-size: 1.2rem;
     text-align: center;
-    color: #999;
+    color: var(--gray_99);
 }

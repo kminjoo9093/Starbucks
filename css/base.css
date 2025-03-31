@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+/* ============= variables ========== */
+:root{
+  /* colors */
+  --gray_99: #999;
+  --gray_77: #777;
+  --gray_66: #666;
+  --gray_55: #555;
+  --gray_44: #444;
+  --gray_33: #333;
+  --gray_22: #222;
+  --gray_11: #111;
+  --gray_18: #181818;
+  --gray_7b: #7b7c7f;
+  --gray_cc: #ccc;
+  --gray_dd: #ddd;
+  --gray_f7: #F7FAF9;
+
+  --brown_2c: #2c2a29;
+  --brown_2d: #2d2926;
+  --brown_28: #282828;
+  --brown_39: #393939;
+  --brown_55: #554c46;
+  --brown_64: #645952;
+  --brown_b8: #b87643;
+  --brown_c2: #c2883f;
+
+  --beige_f4: #f4f4f2;
+  --beige_f6: #f6f5ef;
+  --beige_e4: #e4e4e4;
+  --beige_e6: #e6dbd3;
+  --beige_ff: #fffaf4;
+
+  --green_13: #13362d;
+  --green_1e: #1e3932;
+  --green_007: #00704a;
+  --green_00: #006633;
+  --green_0d: #0d6035;
+  --green_00b: #00b050;
+  --green_66: #669900;
+  --green_4b: #4b615b;
+
+  /* size */
+  --content-width_pc: 110rem;
+
+  /* radius */
+  --radius_btn_6: 0.6rem;
+}
+
+/* ============= reset css ========== */
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    font-family: 'NanumBarunGothic', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+}
+#wrap{
+    width: 100%;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+}
+button{
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* ============= common style ========== */
+.section-inner-width{
+    max-width: 110rem;
+    margin: 0 auto;
+}
+.view-more-btn{
+    font-size: 1.6rem;
+    border: 0.2rem solid #000;
+    border-radius: 0.4rem;
+    padding: 0.9rem 2.6rem;
+    transition: all 0.4s;
+}
+.view-more-btn.black{
+    color: #000;
+}
+.view-more-btn.black:hover{
+    color: #fff;
+    text-decoration: underline;
+    background-color: #000;
+}
+.view-more-btn.white{
+    border-color: #fff;
+    color: #fff;
+}
+.view-more-btn.white:hover{
+    color: #222;
+    text-decoration: underline;
+    background-color: #fff;
+}
+/* subPage common style */
+.sub-wrap{
+  width: 100%;
+  overflow: hidden;
+}
+.sub-wrap .bx-wrapper .bx-next{
+  transform: rotate(180deg);
+}
+/* title area */
+.title-inner{
+  position: relative;
+  height: 9rem;
+}
+.page-title{
+  font-family: "Noto Sans", sans-serif;
+  line-height: 9rem;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 450;
+  letter-spacing: 0.5px;
+}
+.page-location{
+  font-family: "arial", "sans-serif";
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+.page-location{
+  width: auto;
+  height: 1.5rem;
+}
+.page-location li a{
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.page-location li:last-child a:hover{
+  text-decoration: underline;
+}
+/* sub-page : line-notice section */
+.sub-wrap .notice-left-box{
+  width: 60%;
+}
+.sub-wrap .notice-right-box{
+  background: url(../images/sub_notice_bg.jpg);
+  width: 40%;
+}
+.sub-wrap .notice-left-inner,
+.sub-wrap .notice-right-inner{
+  height: 7rem;
+}
+.sub-wrap .notice-right-inner{
+  padding-left: 11rem;
+  background: url(../images/sub_notice_img1.png) no-repeat left 2rem bottom;
+  gap: 4rem;
+  position: relative;
+}
+.web-info-img{
+  max-width: 100%;
+}
+.mob-web-info-img{
+  display: none;
+}
+.sub-wrap .notice-right-inner .notice-plus{
+left: 33rem;
+}
+
+/* common style in sub-content */
+.sub-content{
+width: 100%;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.sub-content.odd{
+background-position: center left 15%;
+}
+.sub-content.even{
+background-position: center right 15%;
+}
+.sub-content-inner{
+height: 43rem;
+position: relative;
+}
+.sub-content-inner p{ 
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+.sub-content-inner .pc-content-txt{
+display: block;
+max-width: 100%;
+margin-bottom: 4rem;
+}
+.sub-content-inner .mob-content-txt{
+  display: none;
+}
+.sub-content.odd p{
+right: 0;
+}
+.sub-content.even p{
+left: 0;
+}

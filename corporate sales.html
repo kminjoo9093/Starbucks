@@ -1,869 +1,1242 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>단체 및 기업 구매 안내 | Starbucks Korea</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>단체 및 기업 구매 안내 | Starbucks Korea</title>
 
-	<!-- jQuery CDN -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-  <!-- XEicon CDN -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-  <!-- bxSlider JS & CSS file -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.css" rel="stylesheet" />
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- XEicon CDN -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <!-- bxSlider JS & CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- 메인 스타일링 CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/subPage.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  <!-- 메인 페이지 기능 JS -->
-  <script src="js/main.js" defer></script>
-  <script src="js/coffee.js" defer></script>
-</head>
-<body>
-  <div class="sub-wrap">
-    <header class="main-header">
-      <div class="tablet-gnb-inner">
-          <div class="logo-box">
-              <a href="index.html">
-                  <img src="https://www.starbucks.co.kr/common/img/common/logo.png" alt="starbucks logo image">
-              </a>
-          </div>
-          <div class="tablet-gnb-area">
-              <ul class="tablet-gnb-list">
-                  <li>
-                      <a href="login.html" class="login-link"><img src="https://www.starbucks.co.kr/common/img/common/icon_user_m.png" alt="로그인 아이콘"></a>
-                  </li>
-                  <li>
-                      <a href="#none" class="store-link"><img src="https://www.starbucks.co.kr/common/img/common/icon_spot_m.png" alt="매장찾기 아이콘"></a>
-                  </li>
-                  <li>
-                      <a href="#none" class="mob-menu-btn"><img src="https://www.starbucks.co.kr/common/img/common/btn_berger_m.png" alt="메뉴 아이콘"></a>
-                  </li>
+    <!-- 메인 스타일링 CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/subPage.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="sub-wrap">
+      <header class="main-header">
+        <div class="main-header-wrap section-inner-width">
+          <h1 class="logo-box">
+            <a href="index.html">
+              <img src="images/logo.png" alt="스타벅스" />
+            </a>
+          </h1>
+          <div class="header-right">
+            <nav class="top_signin-wrap">
+              <ul class="signin-nav-list">
+                <li>
+                  <a class="signin-nav-link" href="login.html">Sign In</a>
+                </li>
+                <li>
+                  <a class="signin-nav-link" href="login.html">My Starbucks</a>
+                </li>
+                <li>
+                  <a class="signin-nav-link" href="#"
+                    >Customer Service & Ideas</a
+                  >
+                </li>
+                <li>
+                  <a class="signin-nav-link" href="#">Find a Store</a>
+                </li>
               </ul>
-          </div>
-      </div>
-      <div class="mob-menu-bcg"></div>
-      <div class="mob-menu-wrap">
-          <div class="mob-menu-inner">
-              <div class="mob-search">
-                  <input type="text"><button class="mob-search-btn">Search</button>
+              <div class="top-search-area">
+                <p class="top_search-btn" aria-label="검색" role="button">
+                  <input
+                    type="text"
+                    class="search-input"
+                    id="search"
+                    placeholder="통합검색"
+                  />
+                  <a href="#" class="top_search-icon"
+                    ><img src="images/icon_search.png" alt="search icon"
+                  /></a>
+                </p>
               </div>
-              <nav class="mob-menu">
-                  <ul class="mob-menu-list">
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          My Starbucks<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="#">한눈에 보기</a></li>
-                          <li><a href="#">My 리워드</a></li>
-                          <li><a href="#">My 스타벅스 카드</a></li>
-                          <li><a href="#">My 스타벅스 모바일 카드</a></li>
-                          <li><a href="#">My 쿠폰</a></li>
-                          <li><a href="#">My 캘린더</a></li>
-                          <li><a href="#">My 메뉴</a></li>
-                          <li><a href="#">My e-프리퀀시</a></li>
-                          <li><a href="#">My 고객의 소리</a></li>
-                          <li><a href="#">전자영수증</a></li>
-                          <li><a href="#">개인컵 리워드 설정</a></li>
-                          <li><a href="#">My DT Pass</a></li>
-                          <li><a href="#">개인 정보 관리</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          COFFEE<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="coffee.html">한눈에 보기</a></li>
-                          <li><a href="#">커피</a></li>
-                          <li><a href="#">커피 이야기</a></li>
-                          <li><a href="#">스타벅스 리저브</a></li>
-                          <li><a href="#">에스프레소 음료</a></li>
-                          <li><a href="#">최상의 커피를 즐기는 법</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          MENU<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="menu.html">한눈에 보기</a></li>
-                          <li><a href="#">음료</a></li>
-                          <li><a href="#">푸드</a></li>
-                          <li><a href="#">상품</a></li>
-                          <li><a href="#">카드</a></li>
-                          <li><a href="#">메뉴 이야기</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          STORE<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="store.html">한눈에 보기</a></li>
-                          <li><a href="#">매장 찾기</a></li>
-                          <li><a href="#">드라이브 스루 매장</a></li>
-                          <li><a href="#">스타벅스 리저브 매장</a></li>
-                          <li><a href="#">커뮤니티 스토어 매장</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          RESPONSIBILITY<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="responsibility.html">한눈에 보기</a></li>
-                          <li><a href="#">사회공헌 캠페인 소개</a></li>
-                          <li><a href="#">지역 사회 참여 활동</a></li>
-                          <li><a href="#">환경보호 활동</a></li>
-                          <li><a href="#">윤리 구매</a></li>
-                          <li><a href="#">글로벌 사회 공헌</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          Starbucks Rewards<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="starbucks rewards.html">한눈에 보기</a></li>
-                          <li><a href="#">스타벅스 리워드</a></li>
-                          <li><a href="#">스타벅스 카드</a></li>
-                          <li><a href="#">스타벅스 모바일 카드</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          CORPORATE SALES<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="#">단체 및 기업 구매 안내</a></li>
-                          <li><a href="#">단체 주문 배달 안내</a></li>
-                      </ul>
-                      <li class="mob-menu-item" onclick="rotateArrow(this.children[0])">
-                          WHAT'S NEW<img class="menu-arr" src="https://www.starbucks.co.kr/common/img/common/mob_gnb_arrow_down_w.png" alt="열기">
-                      </li>
-                      <ul class="mob-submenu-list">
-                          <li><a href="what's new.html">한눈에 보기</a></li>
-                          <li><a href="#">이벤트</a></li>
-                          <li><a href="#">뉴스</a></li>
-                          <li><a href="#">매장별 이벤트</a></li>
-                          <li><a href="#">공지사항</a></li>
-                          <li><a href="#">월페이퍼</a></li>
-                      </ul>
-                  </ul>
-              </nav>
+            </nav>
+            <nav class="main-nav-wrap">
+              <div class="main-nav-inner">
+                <ul class="main-nav-list">
+                  <li>
+                    <a
+                      href="coffee.html"
+                      class="main-nav-link"
+                      data-nav="coffee"
+                      >coffee</a
+                    >
+                  </li>
+                  <li>
+                    <a href="menu.html" class="main-nav-link" data-nav="menu"
+                      >menu</a
+                    >
+                  </li>
+                  <li>
+                    <a href="store.html" class="main-nav-link" data-nav="store"
+                      >store</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="responsibility.html"
+                      class="main-nav-link"
+                      data-nav="responsibility"
+                      >responsibility</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="starbucks rewards.html"
+                      class="main-nav-link"
+                      data-nav="rewards"
+                      >starbucks rewards</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="corporate sales.html"
+                      class="main-nav-link"
+                      data-nav="corporate"
+                      >corporate sales</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="what's new.html"
+                      class="main-nav-link"
+                      data-nav="new"
+                      >what's new</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+            <nav class="tablet-nav">
+              <ul class="tablet-nav-list">
+                <li>
+                  <a href="login.html" class="login-link"
+                    ><img src="images/icon_user_m.png" alt="로그인 아이콘"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#none" class="store-link"
+                    ><img src="images/icon_spot_m.png" alt="매장찾기 아이콘"
+                  /></a>
+                </li>
+                <li>
+                  <a href="#none" class="mob-menu-btn"
+                    ><img src="images/btn_menu_m.png" alt="메뉴 아이콘"
+                  /></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="sub-nav">
+          <div class="sub-nav-wrap" id="coffee">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">커피</a>
+                </h2>
+                <a href="#none">스타벅스 원두</a>
+                <a href="#none">스타벅스 비아</a>
+                <a href="#none">스타벅스앳홈 by 캡슐</a>
+                <a href="#none">나와 어울리는 커피</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">커피 이야기</a>
+                </h2>
+                <a href="#none">농장에서 우리의 손으로</a>
+                <a href="#none">최상의 아라비카 원두</a>
+                <a href="#none">스타벅스 로스트 스펙트럼</a>
+                <a href="#none">스타벅스 디카페인</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">스타벅스 리저브</a>
+                </h2>
+                <a href="#none">RESERVE MAGAZINE</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">에스프레소 음료</a>
+                </h2>
+                <a href="#none">도피오</a>
+                <a href="#none">에스프레소 마키아또</a>
+                <a href="#none">아메리카노</a>
+                <a href="#none">마키아또</a>
+                <a href="#none">카푸치노</a>
+                <a href="#none">라떼</a>
+                <a href="#none">모카</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">최상의 커피를 즐기는 법</a>
+                </h2>
+                <a href="#none">커피 프레스</a>
+                <a href="#none">푸어 오버</a>
+                <a href="#none">아이스 푸어 오버</a>
+                <a href="#none">커피 메이커</a>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="menu">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">음료</a>
+                </h2>
+                <a href="#none">콜드브루</a>
+                <a href="#none">브루드 커피</a>
+                <a href="#none">에스프레소</a>
+                <a href="#none">프라푸치노</a>
+                <a href="#none">블렌디드</a>
+                <a href="#none">스타벅스 리프레셔</a>
+                <a href="#none">스타벅스 피지오</a>
+                <a href="#none">티(티바나)</a>
+                <a href="#none">기타 제조 음료</a>
+                <a href="#none">스타벅스 주스(병음료)</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">푸드</a>
+                </h2>
+                <a href="#none">브레드</a>
+                <a href="#none">케이크</a>
+                <a href="#none">샌드위치 & 샐러드</a>
+                <a href="#none">따뜻한 푸드</a>
+                <a href="#none">과일 & 요거트</a>
+                <a href="#none">스낵 & 미니 디저트</a>
+                <a href="#none">아이스크림</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">상품</a>
+                </h2>
+                <a href="#none">머그</a>
+                <a href="#none">글라스</a>
+                <a href="#none">플라스틱 텀블러</a>
+                <a href="#none">스테인리스 텀블러</a>
+                <a href="#none">보온병</a>
+                <a href="#none">액세서리</a>
+                <a href="#none">선물세트</a>
+                <a href="#none">커피 용품</a>
+                <a href="#none">패키지 티(티바나)</a>
+                <a href="#none">시럽</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">카드</a>
+                </h2>
+                <a href="#none">실물카드</a>
+                <a href="#none">스타벅스 모바일 카드</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">메뉴 이야기</a>
+                </h2>
+                <a href="#none">스타벅스 티바나</a>
+                <a href="#none">스타벅스 콜드 브루</a>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="store">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">매장 찾기</a>
+                </h2>
+                <a href="#none">퀵 검색</a>
+                <a href="#none">지역 검색</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">드라이브스루 매장</a>
+                </h2>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">스타벅스 리저브 매장</a>
+                </h2>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">커뮤니티 스토어 매장</a>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="responsibility">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">사회공헌 캠페인 소개</a>
+                </h2>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">지역 사회 참여 활동</a>
+                </h2>
+                <a href="#none">희망배달 캠페인</a>
+                <a href="#none">재능기부 카페 소식</a>
+                <a href="#none">커뮤니티 스토어</a>
+                <a href="#none">청년 지원 프로그램</a>
+                <a href="#none">우리 농산물 사랑 캠페인</a>
+                <a href="#none">국가 유산 지킴이 활동</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">환경보호 활동</a>
+                </h2>
+                <a href="#none">친환경 활동</a>
+                <a href="#none">일회용 컵 없는 매장</a>
+                <a href="#none">커피 원두 재활용</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">윤리 구매</a>
+                </h2>
+                <a href="#none">윤리적 원두 구매</a>
+                <a href="#none">공정무역 인증</a>
+                <a href="#none">커피 농가 지원 활동</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">글로벌 사회 공헌</a>
+                </h2>
+                <a href="#none">윤리경영 보고서</a>
+                <a href="#none">스타벅스 재단</a>
+                <a href="#none">지구촌 봉사의 달</a>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="rewards">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">스타벅스 리워드</a>
+                </h2>
+                <a href="#none">스타벅스 리워드 소개</a>
+                <a href="#none">등급 및 혜택</a>
+                <a href="#none">스타벅스 별</a>
+                <a href="#none">자주 하는 질문</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">스타벅스 카드</a>
+                </h2>
+                <a href="#none">스타벅스 카드 소개</a>
+                <a href="#none">스타벅스 카드 갤러리</a>
+                <a href="#none">자주 하는 질문</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">스타벅스 모바일 카드</a>
+                </h2>
+                <a href="#none">스타벅스 모바일 카드 소개</a>
+                <a href="#none">이용안내</a>
+                <a href="#none">선물하기</a>
+                <a href="#none">자주 하는 질문</a>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="corporate">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">단체 및 기업 구매 안내</a>
+                </h2>
+                <a href="#none">MD상품</a>
+                <a href="#none">실물카드</a>
+                <a href="#none">스타벅스 모바일 카드(MMS)</a>
+                <a href="#none">스타벅스 모바일 카드(BULK)</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">단체 주문 배달 안내</a>
+                </h2>
+                <a href="#none">단체 주문 배달 안내</a>
+                <a href="#none">단체 주문 신청</a>
+                <a href="#none">신청 내역 조회</a>
+              </div>
+            </div>
+          </div>
+          <div class="sub-nav-wrap" id="new">
+            <div class="sub-nav-inner section-inner-width">
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">이벤트</a>
+                </h2>
+                <a href="#none">전체</a>
+                <a href="#none">스타벅스 카드</a>
+                <a href="#none">스타벅스앳홈 리워드</a>
+                <a href="#none">온라인</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">뉴스</a>
+                </h2>
+                <a href="#none">전체</a>
+                <a href="#none">상품출시</a>
+                <a href="#none">스타벅스와 문화</a>
+                <a href="#none">스타벅스 사회공헌</a>
+                <a href="#none">스타벅스 카드출시</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">매장별 이벤트</a>
+                </h2>
+                <a href="#none">일반 매장</a>
+                <a href="#none">신규 매장</a>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">공지사항</a>
+                </h2>
+              </div>
+              <div class="sub-nav-col">
+                <h2>
+                  <a href="#none">월페이퍼</a>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mob-menu-bcg"></div>
+        <div class="mob-menu-wrap">
+          <div class="mob-menu-inner">
+            <div class="mob-search">
+              <input type="text" /><button class="mob-search-btn">
+                Search
+              </button>
+            </div>
+            <nav class="mob-menu">
+              <ul class="mob-menu-list">
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  My Starbucks<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="#">한눈에 보기</a></li>
+                  <li><a href="#">My 리워드</a></li>
+                  <li><a href="#">My 스타벅스 카드</a></li>
+                  <li><a href="#">My 스타벅스 모바일 카드</a></li>
+                  <li><a href="#">My 쿠폰</a></li>
+                  <li><a href="#">My 캘린더</a></li>
+                  <li><a href="#">My 메뉴</a></li>
+                  <li><a href="#">My e-프리퀀시</a></li>
+                  <li><a href="#">My 고객의 소리</a></li>
+                  <li><a href="#">전자영수증</a></li>
+                  <li><a href="#">개인컵 리워드 설정</a></li>
+                  <li><a href="#">My DT Pass</a></li>
+                  <li><a href="#">개인 정보 관리</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  COFFEE<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="coffee.html">한눈에 보기</a></li>
+                  <li><a href="#">커피</a></li>
+                  <li><a href="#">커피 이야기</a></li>
+                  <li><a href="#">스타벅스 리저브</a></li>
+                  <li><a href="#">에스프레소 음료</a></li>
+                  <li><a href="#">최상의 커피를 즐기는 법</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  MENU<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="menu.html">한눈에 보기</a></li>
+                  <li><a href="#">음료</a></li>
+                  <li><a href="#">푸드</a></li>
+                  <li><a href="#">상품</a></li>
+                  <li><a href="#">카드</a></li>
+                  <li><a href="#">메뉴 이야기</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  STORE<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="store.html">한눈에 보기</a></li>
+                  <li><a href="#">매장 찾기</a></li>
+                  <li><a href="#">드라이브 스루 매장</a></li>
+                  <li><a href="#">스타벅스 리저브 매장</a></li>
+                  <li><a href="#">커뮤니티 스토어 매장</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  RESPONSIBILITY<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="responsibility.html">한눈에 보기</a></li>
+                  <li><a href="#">사회공헌 캠페인 소개</a></li>
+                  <li><a href="#">지역 사회 참여 활동</a></li>
+                  <li><a href="#">환경보호 활동</a></li>
+                  <li><a href="#">윤리 구매</a></li>
+                  <li><a href="#">글로벌 사회 공헌</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  Starbucks Rewards<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="starbucks rewards.html">한눈에 보기</a></li>
+                  <li><a href="#">스타벅스 리워드</a></li>
+                  <li><a href="#">스타벅스 카드</a></li>
+                  <li><a href="#">스타벅스 모바일 카드</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  CORPORATE SALES<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="#">단체 및 기업 구매 안내</a></li>
+                  <li><a href="#">단체 주문 배달 안내</a></li>
+                </ul>
+                <li
+                  class="mob-menu-item"
+                  onclick="rotateArrow(this.children[0])"
+                >
+                  WHAT'S NEW<img
+                    class="menu-arr"
+                    src="./images/icon_arrow_down_w.png"
+                    alt="열기"
+                  />
+                </li>
+                <ul class="mob-submenu-list">
+                  <li><a href="what's new.html">한눈에 보기</a></li>
+                  <li><a href="#">이벤트</a></li>
+                  <li><a href="#">뉴스</a></li>
+                  <li><a href="#">매장별 이벤트</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">월페이퍼</a></li>
+                </ul>
+              </ul>
+            </nav>
           </div>
           <button class="mob-close-btn">
-              <img src="https://www.starbucks.co.kr/common/img/common/btn_gnb_close.png" alt="메뉴 닫기">
+            <img src="./images/icon_gnb_close.png" alt="메뉴 닫기" />
           </button>
-      </div>
-
-      <div class="main-header-wrap">
-          <div class="main-header-inner">
-              <div class="logo-box">
-                  <a href="index.html">
-                      <img src="https://www.starbucks.co.kr/common/img/common/logo.png" alt="starbucks logo image">
-                  </a>
-              </div>
-              <div class="top_signin-wrap">
-                  <ul class="signin-nav-list">
-                      <li class="divide-bar"><a class="signin-nav-link" href="#">Sign In</a></li>
-                      <li class="divide-bar"><a class="signin-nav-link" href="#">My Starbucks</a></li>
-                      <li class="divide-bar"><a class="signin-nav-link" href="#">Customer Service & Ideas</a></li>
-                      <li><a class="signin-nav-link" href="#">Find a Store</a></li>
-                  </ul>
-                  <div class="top-search-area">
-                      <button class="top_search-btn" aria-label="검색">
-                          <input type="text" class="search-input" id="search" placeholder="통합검색">
-                          <a href="#"><img class="top_search-icon" src="https://image.istarbucks.co.kr/common/img/common/icon_magnifier_black.png" alt="search icon"></a>
-                      </button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <nav class="main-nav-wrap">
-          <div class="main-nav-inner">
-              <ul class="main-nav-list">
-                  <li>
-                      <a href="coffee.html" class="main-nav-link">coffee</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">커피</a>
-                                  </h2>
-                                  <a href="#none">스타벅스 원두</a>
-                                  <a href="#none">스타벅스 비아</a>
-                                  <a href="#none">스타벅스앳홈 by 캡슐</a>
-                                  <a href="#none">나와 어울리는 커피</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">커피 이야기</a>
-                                  </h2>
-                                  <a href="#none">농장에서 우리의 손으로</a>
-                                  <a href="#none">최상의 아라비카 원두</a>
-                                  <a href="#none">스타벅스 로스트 스펙트럼</a>
-                                  <a href="#none">스타벅스 디카페인</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">스타벅스 리저브</a>
-                                  </h2>
-                                  <a href="#none">RESERVE MAGAZINE</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">에스프레소 음료</a>
-                                  </h2>
-                                  <a href="#none">도피오</a>
-                                  <a href="#none">에스프레소 마키아또</a>
-                                  <a href="#none">아메리카노</a>
-                                  <a href="#none">마키아또</a>
-                                  <a href="#none">카푸치노</a>
-                                  <a href="#none">라떼</a>
-                                  <a href="#none">모카</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">최상의 커피를 즐기는 법</a>
-                                  </h2>
-                                  <a href="#none">커피 프레스</a>
-                                  <a href="#none">푸어 오버</a>
-                                  <a href="#none">아이스 푸어 오버</a>
-                                  <a href="#none">커피 메이커</a>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="menu.html" class="main-nav-link">menu</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">음료</a>
-                                  </h2>
-                                  <a href="#none">콜드브루</a>
-                                  <a href="#none">브루드 커피</a>
-                                  <a href="#none">에스프레소</a>
-                                  <a href="#none">프라푸치노</a>
-                                  <a href="#none">블렌디드</a>
-                                  <a href="#none">스타벅스 리프레셔</a>
-                                  <a href="#none">스타벅스 피지오</a>
-                                  <a href="#none">티(티바나)</a>
-                                  <a href="#none">기타 제조 음료</a>
-                                  <a href="#none">스타벅스 주스(병음료)</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">푸드</a>
-                                  </h2>
-                                  <a href="#none">브레드</a>
-                                  <a href="#none">케이크</a>
-                                  <a href="#none">샌드위치 & 샐러드</a>
-                                  <a href="#none">따뜻한 푸드</a>
-                                  <a href="#none">과일 & 요거트</a>
-                                  <a href="#none">스낵 & 미니 디저트</a>
-                                  <a href="#none">아이스크림</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">상품</a>
-                                  </h2>
-                                  <a href="#none">머그</a>
-                                  <a href="#none">글라스</a>
-                                  <a href="#none">플라스틱 텀블러</a>
-                                  <a href="#none">스테인리스 텀블러</a>
-                                  <a href="#none">보온병</a>
-                                  <a href="#none">액세서리</a>
-                                  <a href="#none">선물세트</a>
-                                  <a href="#none">커피 용품</a>
-                                  <a href="#none">패키지 티(티바나)</a>
-                                  <a href="#none">시럽</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">카드</a>
-                                  </h2>
-                                  <a href="#none">실물카드</a>
-                                  <a href="#none">스타벅스 모바일 카드</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">메뉴 이야기</a>
-                                  </h2>
-                                  <a href="#none">스타벅스 티바나</a>
-                                  <a href="#none">스타벅스 콜드 브루</a>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="store.html" class="main-nav-link">store</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">매장 찾기</a>
-                                  </h2>
-                                  <a href="#none">퀵 검색</a>
-                                  <a href="#none">지역 검색</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">드라이브스루 매장</a>
-                                  </h2>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">스타벅스 리저브 매장</a>
-                                  </h2>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">커뮤니티 스토어 매장</a>
-                                  </h2>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="responsibility.html" class="main-nav-link">responsibility</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">사회공헌 캠페인 소개</a>
-                                  </h2>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">지역 사회 참여 활동</a>
-                                  </h2>
-                                  <a href="#none">희망배달 캠페인</a>
-                                  <a href="#none">재능기부 카페 소식</a>
-                                  <a href="#none">커뮤니티 스토어</a>
-                                  <a href="#none">청년 지원 프로그램</a>
-                                  <a href="#none">우리 농산물 사랑 캠페인</a>
-                                  <a href="#none">국가 유산 지킴이 활동</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">환경보호 활동</a>
-                                  </h2>
-                                  <a href="#none">친환경 활동</a>
-                                  <a href="#none">일회용 컵 없는 매장</a>
-                                  <a href="#none">커피 원두 재활용</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">윤리 구매</a>
-                                  </h2>
-                                  <a href="#none">윤리적 원두 구매</a>
-                                  <a href="#none">공정무역 인증</a>
-                                  <a href="#none">커피 농가 지원 활동</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">글로벌 사회 공헌</a>
-                                  </h2>
-                                  <a href="#none">윤리경영 보고서</a>
-                                  <a href="#none">스타벅스 재단</a>
-                                  <a href="#none">지구촌 봉사의 달</a>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="starbucks rewards.html" class="main-nav-link">starbucks rewards</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">스타벅스 리워드</a>
-                                  </h2>
-                                  <a href="#none">스타벅스 리워드 소개</a>
-                                  <a href="#none">등급 및 혜택</a>
-                                  <a href="#none">스타벅스 별</a>
-                                  <a href="#none">자주 하는 질문</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">스타벅스 카드</a>
-                                  </h2>
-                                  <a href="#none">스타벅스 카드 소개</a>
-                                  <a href="#none">스타벅스 카드 갤러리</a>
-                                  <a href="#none">자주 하는 질문</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">스타벅스 모바일 카드</a>
-                                  </h2>
-                                  <a href="#none">스타벅스 모바일 카드 소개</a>
-                                  <a href="#none">이용안내</a>
-                                  <a href="#none">선물하기</a>
-                                  <a href="#none">자주 하는 질문</a>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="corporate sales.html" class="main-nav-link">corporate sales</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">단체 및 기업 구매 안내</a>
-                                  </h2>
-                                  <a href="#none">MD상품</a>
-                                  <a href="#none">실물카드</a>
-                                  <a href="#none">스타벅스 모바일 카드(MMS)</a>
-                                  <a href="#none">스타벅스 모바일 카드(BULK)</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">단체 주문 배달 안내</a>
-                                  </h2>
-                                  <a href="#none">단체 주문 배달 안내</a>
-                                  <a href="#none">단체 주문 신청</a>
-                                  <a href="#none">신청 내역 조회</a>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-                  <li>
-                      <a href="what's new.html" class="main-nav-link">what's new</a>
-                      <div class="sub-nav-wrap">
-                          <div class="sub-nav-inner">
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">이벤트</a>
-                                  </h2>
-                                  <a href="#none">전체</a>
-                                  <a href="#none">스타벅스 카드</a>
-                                  <a href="#none">스타벅스앳홈 리워드</a>
-                                  <a href="#none">온라인</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">뉴스</a>
-                                  </h2>
-                                  <a href="#none">전체</a>
-                                  <a href="#none">상품출시</a>
-                                  <a href="#none">스타벅스와 문화</a>
-                                  <a href="#none">스타벅스 사회공헌</a>
-                                  <a href="#none">스타벅스 카드출시</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">매장별 이벤트</a>
-                                  </h2>
-                                  <a href="#none">일반 매장</a>
-                                  <a href="#none">신규 매장</a>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">공지사항</a>
-                                  </h2>
-                              </div>
-                              <div class="sub-nav-col">
-                                  <h2>
-                                      <a href="#none">월페이퍼</a>
-                                  </h2>
-                              </div>
-                          </div>
-                      </div>
-                  </li>
-              </ul>
-          </div>
-      </nav>
-  </header>
-    <main>
-      <div class="corporate-title-area">
-        <div class="title-inner section-inner-width">
-          <h1 class="page-title">단체 및 기업 구매 안내</h1>
-          <ul class="page-location">
-            <li><a href="index.html" aria-label="홈으로 가기"><i class="xi-home-o"></i></a></li>
-            <li><span aria-label="하위메뉴"><i class="xi-angle-right-thin"></i></span></li>
-            <li><a href="#" aria-current="page">CORPORATE SALES</a></li>
-            <li><span aria-label="하위메뉴"><i class="xi-angle-right-thin"></i></span></li>
-            <li><a href="#" aria-current="page">단체 및 기업 구매 안내</a></li>
-          </ul>
         </div>
-      </div>
-      <div class="cor-sales-content-wrap">
-        <div class="cor-sales-content-inner section-inner-width">
-          <div class="cor-sales-content">
-            <aside class="cor-sales-bn">
-              <a href="#none" target="_blank"><img src="https://image.istarbucks.co.kr/img/event/2024/241118_b2b_PC.jpg" alt="비즈몰 그랜드 오픈 기업 전용 상품으로 차원이 다른 감동을 선물하세요"></a>
-            </aside>
-            <section class="cor-sales-guide">
-              <p class="guide-txt">
-                <strong>스타벅스에서 준비한 다양한 상품의 대량 구매 및 상담을 도와드립니다.</strong>
-                <span>귀사의 브랜드 가치를 스타벅스가 함께하여 더욱 빛나게 합니다.스타벅스 상품 및 카드 대량구매를 통하여 행사의 가치를 높여보세요.</span>
-              </p>
-              <div class="b2b-box">
-                <span>스타벅스 B2B에 대한 자세한 소개서를 확인해 보세요.</span>
-                <button class="btn-gray">B2B카탈로그 다운로드</button>
-              </div>
-            </section>
-            <section class="cor-sales-info">
-              <h2>상품 안내 및 구매 절차</h2>
-              <p>스타벅스 단체 및 기업 구매가 가능한 상품의 종류는 MD상품, 스타벅스 실물카드, 스타벅스 모바일 카드(MMS/BULK)가 있습니다. 각 상품별 안내 및 구매 절차를 확인해 주세요.</p>
-              <div class="product-tab-area">
-                <ul class="product-tabMenu">
-                  <li data-tab="tab1" class="active">MD 상품</li>
-                  <li data-tab="tab2">실물카드</li>
-                  <li data-tab="tab3">스타벅스 모바일 카드(MMS)</li>
-                  <li data-tab="tab4">스타벅스 모바일 카드(BULK)</li>
-                </ul>
-                <div class="product-tab-content">
-                  <div id="tab1" class="tab active">
-                    <p class="tab-link-box">
-                      <span>스타벅스 MD 상품은 비즈몰을 통해 구매가 가능하며, 단체/기업고객을 위한 전용 상품 제작이 가능합니다. 특별한 선물로 즐거운을 선사하세요.<br>
-                      (&#8251; 기존 B2B주문사이트 주문 내역은 11/30까지 확인 가능합니다)<a href="#" target="_blank" class="link-green">[바로가기]</a></span>
-                      <a href="#none" target="_blank" class="btn-goMall">비즈몰 바로가기</a>
-                    </p>
-                    <section class="step-box">
-                      <h3>구매절차</h3>
-                      <div class="step-img">
-                        <img src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_01.jpg" alt="MD상품 구매절차 이미지">
-                      </div>
-                      <ul class="step-txt">
-                        <li>
-                          <strong>Step 1.비즈몰<a href="#none" class="link-green">[회원가입]</a></strong>
-                          재판매 방지 등을 위해 가입 시 <br>사업자 등록증 확인으로 <br>거래처 등록까지 2~3영업일 소요
-                        </li>
-                        <li>
-                          <strong>Step 2. 접수 및 담당자 상담</strong>
-                          사이트 내 상품 구매 혹은 <br>구매 희망 상품 견적 관련 상담
-                        </li>
-                        <li>
-                          <strong>Step 3. 결제 진행(선결제)</strong>
-                          신용카드<br>(계좌이체 희망 시 고객센터 문의)
-                        </li>
-                        <li>
-                          <strong>Step 4. 상품 발송</strong>
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="precaution-box">
-                      <h3>MD 상품 구매 유의사항</h3>
-                      <ul>
-                        <li class="list-disc">재판매 방지 등을 위해 가입 시 사업자 등록증 확인하여 거래처 등록까지 2-3영업일 가량 소요될 수 있는 점 참고 부탁드립니다.
-                        </li>
-                        <li class="list-disc">모든 상품의 구매는 선결제를 원칙으로 합니다.
-                        </li>
-                        <li class="list-disc">결제가 완료되면 배송작업이 진행됩니다. 주문일 기준 D+11부터 배송희망일을 선택할 수 있으며, 택배사 사정에 따라 일정이 변동될 수 있습니다.<br>(주말 및 공휴일 제외 / 500개 이상 발주 시 별도 문의 바람)
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="consult-info">
-                      <h3>상담 안내</h3>
-                      <ul>
-                        <li class="list-disc">상담 및 운영 시간 : 평일 09 : 00 ~ 17 : 00 / 점심시간 12 : 30 ~ 13 : 30 (토 / 일 / 공휴일 제외)
-                        </li>
-                        <li class="list-disc">상품 문의 전화 : 070 - 4139 - 3440</li>
-                        <li class="list-disc">e - mail : starbucksb2b@starbucks.co.kr</li>
-                      </ul>
-                      <span>*단체 및 기업 구매 신청 또는 구매상담은 <a href="#none" class="link-green">[스타벅스 비즈몰]</a>에서 확인 해주세요.</span>
-                    </section>
-                  </div>
-                  <div id="tab2" class="tab">
-                    <p class="tab-link-box">
-                      <span>스타벅스 실물 카드는 비즈몰을 통해 구매가 가능합니다. 스타벅스만의 특별한 충전식 선불카드를 통하여 따뜻한 커피와 마음을 전달하세요.<br>
-                      (&#8251; 기존 B2B주문사이트 주문 내역은 11/30까지 확인 가능합니다)<a href="#" target="_blank" class="link-green">[바로가기]</a></span>
-                      <a href="#none" target="_blank" class="btn-goMall">비즈몰 바로가기</a>
-                      <a href="#none" target="_blank" class="btn-goMall">B2B실물카드 매뉴얼</a>
-                    </p>
-                    <section class="step-box">
-                      <h3>구매절차</h3>
-                      <div class="step-img">
-                        <img src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_01.jpg" alt="실물카드 구매절차 이미지">
-                      </div>
-                      <ul class="step-txt">
-                        <li>
-                          <strong>Step 1.비즈몰<a href="#none" class="link-green">[회원가입]</a></strong>
-                          재판매 방지 등을 위해 가입 시 <br>사업자 등록증 확인으로 <br>거래처 등록까지 2~3영업일 소요
-                        </li>
-                        <li>
-                          <strong>Step 2. 접수 및 담당자 상담</strong>
-                          사이트 내 상품 구매 혹은 <br>구매 희망 상품 견적 관련 상담
-                        </li>
-                        <li>
-                          <strong>Step 3. 결제 진행(선결제)</strong>
-                          신용카드<br>(계좌이체 희망 시 고객센터 문의)
-                        </li>
-                        <li>
-                          <strong>Step 4. 스타벅스 카드 배송 및 수령</strong>
-                          해당 상품은 현금성 품목으로 <br>분실 사고 대비하여 <br>미충전 상태로 발송 <br>(수령 후 출고센터를 통해 충전 가능)
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="precaution-box">
-                      <h3>실물카드 구매 유의사항</h3>
-                      <ul>
-                        <li class="list-disc">재판매 방지 등을 위해 가입 시 사업자 등록증 확인하여 거래처 등록까지 2-3영업일 가량 소요될 수 있는 점 참고 부탁드립니다.
-                        </li>
-                        <li class="list-disc">모든 상품의 구매는 선결제를 원칙으로 합니다.
-                        </li>
-                        <li class="list-disc">결제가 완료되면 배송작업이 진행됩니다. 주문일 기준 D+11부터 배송희망일을 선택할 수 있으며, 택배사 사정에 따라 일정이 변동될 수 있습니다.<br>(주말 및 공휴일 제외 / 500개 이상 발주 시 별도 문의 바람)
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="consult-info">
-                      <h3>상담 안내</h3>
-                      <ul>
-                        <li class="list-disc">상담 및 운영 시간 : 평일 09 : 00 ~ 17 : 00 / 점심시간 12 : 30 ~ 13 : 30 (토 / 일 / 공휴일 제외)
-                        </li>
-                        <li class="list-disc">상품 문의 전화 : 070 - 4139 - 3440</li>
-                        <li class="list-disc">e - mail : starbucksb2b@starbucks.co.kr</li>
-                      </ul>
-                      <span>*단체 및 기업 구매 신청 또는 구매상담은 <a href="#none" class="link-green">[스타벅스 비즈몰]</a>에서 확인 해주세요.</span>
-                    </section>
-                  </div>
-                  <div id="tab3" class="tab">
-                    <p class="tab-link-box">
-                      <span>수신자 연락처로 예약 발송이 가능한 스타벅스 모바일 카드 대량 구매 서비스입니다. 문자 (MMS) 발송 서비스를 통해 간편하게 선물해 보세요.</span>
-                      <a href="#none" target="_blank" class="btn-goMall">스타벅스 모바일 카드 구매신청</a>
-                      <a href="#none" target="_blank" class="btn-goMall">구매 내역 조회</a>
-                      <a href="#none" target="_blank" class="btn-goMall">스타벅스 모바일 카드(MMS)</a>
-                    </p>
-                    <section class="step-box">
-                      <h3>구매절차</h3>
-                      <div class="step-img">
-                        <img src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_02_001.jpg" alt="스타벅스 모바일 카드 구매절차 이미지">
-                      </div>
-                      <ul class="step-txt">
-                        <li>
-                          <strong>Step 1.스타벅스<a href="#none" class="link-green">[회원가입]</a></strong>
-                          스타벅스 홈페이지<br>개인 회원 로그인 후 신청 가능
-                        </li>
-                        <li>
-                          <strong>Step 2. 구매 신청</strong>
-                          신청일 낮 12시 이전 기준 <br>익일까지 선택 가능, <br>당일 발송 불가<br>
-                          <a href="#none" class="link-green">[구매 신청 바로가기]</a>
-                        </li>
-                        <li>
-                          <strong>Step 3. 결제 진행</strong>
-                          ARS결제(법인카드 결제 가능)<br>또는 무통장 입금
-                        </li>
-                        <li>
-                          <strong>Step 4. 스타벅스 모바일 카드(MMS) 발송</strong>
-                          예약 신청일 오전 10시 이후<br>순차 발송.<br>발송 실패 시, 발송일 +4일차<br>실패 내역 및 후속 안내 메일 발송
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="consult-info">
-                      <h3>상담 안내</h3>
-                      <ul>
-                        <li class="list-disc">상담 및 운영 시간 : 평일 09 : 00 ~ 16 : 00 / 점심시간 11 : 30 ~ 12 : 30 (토 / 일 / 공휴일 제외)
-                        </li>
-                        <li class="list-disc">e - mail : starbucksb2b@starbucks.co.kr</li>
-                      </ul>
-                      <span>* 자동메일의 경우, 접수 시 로그인 된 계정에 등록된 이메일로 안내가 나갑니다. 답변은 운영시간 내에 진행되며, 문의가 많을 경우 답변이 지연될 수 있습니다.
-                      </span>
-                    </section>
-                  </div>
-                  <div id="tab4" class="tab">
-                    <p class="tab-link-box">
-                      <span>예약 발송이 아닌 다운로드 후 구매처에서 자체 발송 가능한 스타벅스 모바일 카드 대량 구매 서비스입니다. 스타벅스 모바일 카드를 다운로드 받아 직접 선물해 보세요.<br>
-                      &#8251; BULK는 예약 발송 시스템을 지원하지 않는 품목입니다. (발송서비스 없음)</span>
-                      <a href="#none" target="_blank" class="btn-goMall">스타벅스 모바일 카드 구매신청</a>
-                      <a href="#none" target="_blank" class="btn-goMall">구매 내역 조회</a>
-                      <a href="#none" target="_blank" class="btn-goMall">스타벅스 모바일 카드(BULK)</a>
-                    </p>
-                    <section class="step-box">
-                      <h3>구매절차</h3>
-                      <div class="step-img">
-                        <img src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_03.jpg" alt="스타벅스 모바일 카드 벌크 구매절차 이미지">
-                      </div>
-                      <ul class="step-txt">
-                        <li>
-                          <strong>Step 1.스타벅스<a href="#none" class="link-green">[회원가입]</a></strong>
-                          스타벅스 홈페이지<br>개인 회원 로그인 후 신청 가능
-                        </li>
-                        <li>
-                          <strong>Step 2. 구매 신청</strong>
-                          신청일 낮 12시 이전 기준<br>익일까지 선택 가능,<br>당일 다운로드 불가<br>
-                          <a href="#none" class="link-green">[구매 신청 바로가기]</a>
-                        </li>
-                        <li>
-                          <strong>Step 3. 결제 진행</strong>
-                          ARS결제(법인카드 결제 가능)<br>또는 무통장 입금
-                        </li>
-                        <li>
-                          <strong>Step 4. 스타벅스 모바일 카드<br>다운로드</strong>
-                          예약 신청일부터<br>구매 내역 조회에서 다운로드 가능<br>
-                          &#8251;발송 작업은 구매처에서 직접 진행<br>(BULK 품목은 발송 지원이 없는 품목)
-                        </li>
-                      </ul>
-                    </section>
-                    <section class="consult-info">
-                      <h3>상담 안내</h3>
-                      <ul>
-                        <li class="list-disc">상담 및 운영 시간 : 평일 09 : 00 ~ 16 : 00 / 점심시간 11 : 30 ~ 12 : 30 (토 / 일 / 공휴일 제외)
-                        </li>
-                        <li class="list-disc">e - mail : starbucksb2b@starbucks.co.kr</li>
-                      </ul>
-                      <span>* 자동메일의 경우, 접수 시 로그인 된 계정에 등록된 이메일로 안내가 나갑니다. 답변은 운영시간 내에 진행되며, 문의가 많을 경우 답변이 지연될 수 있습니다.</span>
-                    </section>
+      </header>
+      <main>
+        <div class="corporate-title-area">
+          <div class="title-inner section-inner-width">
+            <h1 class="page-title">단체 및 기업 구매 안내</h1>
+            <ul class="page-location">
+              <li>
+                <a href="index.html" aria-label="홈으로 가기"
+                  ><img src="./images/icon_home.png" alt=""
+                /></a>
+              </li>
+              <li>
+                <span aria-label="하위메뉴"
+                  ><img src="./images/icon_arrow_small.png" alt=""
+                /></span>
+              </li>
+              <li><a href="#" aria-current="page">CORPORATE SALES</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cor-sales-content-wrap">
+          <div class="cor-sales-content-inner section-inner-width">
+            <div class="cor-sales-content">
+              <aside class="cor-sales-bn">
+                <a href="#none" target="_blank"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2024/241118_b2b_PC.jpg"
+                    alt="비즈몰 그랜드 오픈 기업 전용 상품으로 차원이 다른 감동을 선물하세요"
+                /></a>
+              </aside>
+              <section class="cor-sales-guide">
+                <p class="guide-txt">
+                  <strong
+                    >스타벅스에서 준비한 다양한 상품의 대량 구매 및 상담을
+                    도와드립니다.</strong
+                  >
+                  <span
+                    >귀사의 브랜드 가치를 스타벅스가 함께하여 더욱 빛나게
+                    합니다.스타벅스 상품 및 카드 대량구매를 통하여 행사의 가치를
+                    높여보세요.</span
+                  >
+                </p>
+                <div class="b2b-box">
+                  <span
+                    >스타벅스 B2B에 대한 자세한 소개서를 확인해 보세요.</span
+                  >
+                  <button class="btn-gray">B2B카탈로그 다운로드</button>
+                </div>
+              </section>
+              <section class="cor-sales-info">
+                <h2>상품 안내 및 구매 절차</h2>
+                <p>
+                  스타벅스 단체 및 기업 구매가 가능한 상품의 종류는 MD상품,
+                  스타벅스 실물카드, 스타벅스 모바일 카드(MMS/BULK)가 있습니다.
+                  각 상품별 안내 및 구매 절차를 확인해 주세요.
+                </p>
+                <div class="product-tab-area">
+                  <ul class="product-tabMenu">
+                    <li data-tab="tab1" class="active">MD 상품</li>
+                    <li data-tab="tab2">실물카드</li>
+                    <li data-tab="tab3">스타벅스 모바일 카드(MMS)</li>
+                    <li data-tab="tab4">스타벅스 모바일 카드(BULK)</li>
+                  </ul>
+                  <div class="product-tab-content">
+                    <div id="tab1" class="tab active">
+                      <p class="tab-link-box">
+                        <span
+                          >스타벅스 MD 상품은 비즈몰을 통해 구매가 가능하며,
+                          단체/기업고객을 위한 전용 상품 제작이 가능합니다.
+                          특별한 선물로 즐거운을 선사하세요.<br />
+                          (&#8251; 기존 B2B주문사이트 주문 내역은 11/30까지 확인
+                          가능합니다)<a
+                            href="#"
+                            target="_blank"
+                            class="link-green"
+                            >[바로가기]</a
+                          ></span
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >비즈몰 바로가기</a
+                        >
+                      </p>
+                      <section class="step-box">
+                        <h3>구매절차</h3>
+                        <div class="step-img">
+                          <img
+                            src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_01.jpg"
+                            alt="MD상품 구매절차 이미지"
+                          />
+                        </div>
+                        <ul class="step-txt">
+                          <li>
+                            <strong
+                              >Step 1.비즈몰<a href="#none" class="link-green"
+                                >[회원가입]</a
+                              ></strong
+                            >
+                            재판매 방지 등을 위해 가입 시 <br />사업자 등록증
+                            확인으로 <br />거래처 등록까지 2~3영업일 소요
+                          </li>
+                          <li>
+                            <strong>Step 2. 접수 및 담당자 상담</strong>
+                            사이트 내 상품 구매 혹은 <br />구매 희망 상품 견적
+                            관련 상담
+                          </li>
+                          <li>
+                            <strong>Step 3. 결제 진행(선결제)</strong>
+                            신용카드<br />(계좌이체 희망 시 고객센터 문의)
+                          </li>
+                          <li>
+                            <strong>Step 4. 상품 발송</strong>
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="precaution-box">
+                        <h3>MD 상품 구매 유의사항</h3>
+                        <ul>
+                          <li class="list-disc">
+                            재판매 방지 등을 위해 가입 시 사업자 등록증 확인하여
+                            거래처 등록까지 2-3영업일 가량 소요될 수 있는 점
+                            참고 부탁드립니다.
+                          </li>
+                          <li class="list-disc">
+                            모든 상품의 구매는 선결제를 원칙으로 합니다.
+                          </li>
+                          <li class="list-disc">
+                            결제가 완료되면 배송작업이 진행됩니다. 주문일 기준
+                            D+11부터 배송희망일을 선택할 수 있으며, 택배사
+                            사정에 따라 일정이 변동될 수 있습니다.<br />(주말 및
+                            공휴일 제외 / 500개 이상 발주 시 별도 문의 바람)
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="consult-info">
+                        <h3>상담 안내</h3>
+                        <ul>
+                          <li class="list-disc">
+                            상담 및 운영 시간 : 평일 09 : 00 ~ 17 : 00 /
+                            점심시간 12 : 30 ~ 13 : 30 (토 / 일 / 공휴일 제외)
+                          </li>
+                          <li class="list-disc">
+                            상품 문의 전화 : 070 - 4139 - 3440
+                          </li>
+                          <li class="list-disc">
+                            e - mail : starbucksb2b@starbucks.co.kr
+                          </li>
+                        </ul>
+                        <span
+                          >*단체 및 기업 구매 신청 또는 구매상담은
+                          <a href="#none" class="link-green"
+                            >[스타벅스 비즈몰]</a
+                          >에서 확인 해주세요.</span
+                        >
+                      </section>
+                    </div>
+                    <div id="tab2" class="tab">
+                      <p class="tab-link-box">
+                        <span
+                          >스타벅스 실물 카드는 비즈몰을 통해 구매가 가능합니다.
+                          스타벅스만의 특별한 충전식 선불카드를 통하여 따뜻한
+                          커피와 마음을 전달하세요.<br />
+                          (&#8251; 기존 B2B주문사이트 주문 내역은 11/30까지 확인
+                          가능합니다)<a
+                            href="#"
+                            target="_blank"
+                            class="link-green"
+                            >[바로가기]</a
+                          ></span
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >비즈몰 바로가기</a
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >B2B실물카드 매뉴얼</a
+                        >
+                      </p>
+                      <section class="step-box">
+                        <h3>구매절차</h3>
+                        <div class="step-img">
+                          <img
+                            src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_01.jpg"
+                            alt="실물카드 구매절차 이미지"
+                          />
+                        </div>
+                        <ul class="step-txt">
+                          <li>
+                            <strong
+                              >Step 1.비즈몰<a href="#none" class="link-green"
+                                >[회원가입]</a
+                              ></strong
+                            >
+                            재판매 방지 등을 위해 가입 시 <br />사업자 등록증
+                            확인으로 <br />거래처 등록까지 2~3영업일 소요
+                          </li>
+                          <li>
+                            <strong>Step 2. 접수 및 담당자 상담</strong>
+                            사이트 내 상품 구매 혹은 <br />구매 희망 상품 견적
+                            관련 상담
+                          </li>
+                          <li>
+                            <strong>Step 3. 결제 진행(선결제)</strong>
+                            신용카드<br />(계좌이체 희망 시 고객센터 문의)
+                          </li>
+                          <li>
+                            <strong>Step 4. 스타벅스 카드 배송 및 수령</strong>
+                            해당 상품은 현금성 품목으로 <br />분실 사고 대비하여
+                            <br />미충전 상태로 발송 <br />(수령 후 출고센터를
+                            통해 충전 가능)
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="precaution-box">
+                        <h3>실물카드 구매 유의사항</h3>
+                        <ul>
+                          <li class="list-disc">
+                            재판매 방지 등을 위해 가입 시 사업자 등록증 확인하여
+                            거래처 등록까지 2-3영업일 가량 소요될 수 있는 점
+                            참고 부탁드립니다.
+                          </li>
+                          <li class="list-disc">
+                            모든 상품의 구매는 선결제를 원칙으로 합니다.
+                          </li>
+                          <li class="list-disc">
+                            결제가 완료되면 배송작업이 진행됩니다. 주문일 기준
+                            D+11부터 배송희망일을 선택할 수 있으며, 택배사
+                            사정에 따라 일정이 변동될 수 있습니다.<br />(주말 및
+                            공휴일 제외 / 500개 이상 발주 시 별도 문의 바람)
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="consult-info">
+                        <h3>상담 안내</h3>
+                        <ul>
+                          <li class="list-disc">
+                            상담 및 운영 시간 : 평일 09 : 00 ~ 17 : 00 /
+                            점심시간 12 : 30 ~ 13 : 30 (토 / 일 / 공휴일 제외)
+                          </li>
+                          <li class="list-disc">
+                            상품 문의 전화 : 070 - 4139 - 3440
+                          </li>
+                          <li class="list-disc">
+                            e - mail : starbucksb2b@starbucks.co.kr
+                          </li>
+                        </ul>
+                        <span
+                          >*단체 및 기업 구매 신청 또는 구매상담은
+                          <a href="#none" class="link-green"
+                            >[스타벅스 비즈몰]</a
+                          >에서 확인 해주세요.</span
+                        >
+                      </section>
+                    </div>
+                    <div id="tab3" class="tab">
+                      <p class="tab-link-box">
+                        <span
+                          >수신자 연락처로 예약 발송이 가능한 스타벅스 모바일
+                          카드 대량 구매 서비스입니다. 문자 (MMS) 발송 서비스를
+                          통해 간편하게 선물해 보세요.</span
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >스타벅스 모바일 카드 구매신청</a
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >구매 내역 조회</a
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >스타벅스 모바일 카드(MMS)</a
+                        >
+                      </p>
+                      <section class="step-box">
+                        <h3>구매절차</h3>
+                        <div class="step-img">
+                          <img
+                            src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_02_001.jpg"
+                            alt="스타벅스 모바일 카드 구매절차 이미지"
+                          />
+                        </div>
+                        <ul class="step-txt">
+                          <li>
+                            <strong
+                              >Step 1.스타벅스<a href="#none" class="link-green"
+                                >[회원가입]</a
+                              ></strong
+                            >
+                            스타벅스 홈페이지<br />개인 회원 로그인 후 신청 가능
+                          </li>
+                          <li>
+                            <strong>Step 2. 구매 신청</strong>
+                            신청일 낮 12시 이전 기준 <br />익일까지 선택 가능,
+                            <br />당일 발송 불가<br />
+                            <a href="#none" class="link-green"
+                              >[구매 신청 바로가기]</a
+                            >
+                          </li>
+                          <li>
+                            <strong>Step 3. 결제 진행</strong>
+                            ARS결제(법인카드 결제 가능)<br />또는 무통장 입금
+                          </li>
+                          <li>
+                            <strong
+                              >Step 4. 스타벅스 모바일 카드(MMS) 발송</strong
+                            >
+                            예약 신청일 오전 10시 이후<br />순차 발송.<br />발송
+                            실패 시, 발송일 +4일차<br />실패 내역 및 후속 안내
+                            메일 발송
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="consult-info">
+                        <h3>상담 안내</h3>
+                        <ul>
+                          <li class="list-disc">
+                            상담 및 운영 시간 : 평일 09 : 00 ~ 16 : 00 /
+                            점심시간 11 : 30 ~ 12 : 30 (토 / 일 / 공휴일 제외)
+                          </li>
+                          <li class="list-disc">
+                            e - mail : starbucksb2b@starbucks.co.kr
+                          </li>
+                        </ul>
+                        <span
+                          >* 자동메일의 경우, 접수 시 로그인 된 계정에 등록된
+                          이메일로 안내가 나갑니다. 답변은 운영시간 내에
+                          진행되며, 문의가 많을 경우 답변이 지연될 수 있습니다.
+                        </span>
+                      </section>
+                    </div>
+                    <div id="tab4" class="tab">
+                      <p class="tab-link-box">
+                        <span
+                          >예약 발송이 아닌 다운로드 후 구매처에서 자체 발송
+                          가능한 스타벅스 모바일 카드 대량 구매 서비스입니다.
+                          스타벅스 모바일 카드를 다운로드 받아 직접 선물해
+                          보세요.<br />
+                          &#8251; BULK는 예약 발송 시스템을 지원하지 않는
+                          품목입니다. (발송서비스 없음)</span
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >스타벅스 모바일 카드 구매신청</a
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >구매 내역 조회</a
+                        >
+                        <a href="#none" target="_blank" class="btn-goMall"
+                          >스타벅스 모바일 카드(BULK)</a
+                        >
+                      </p>
+                      <section class="step-box">
+                        <h3>구매절차</h3>
+                        <div class="step-img">
+                          <img
+                            src="https://image.istarbucks.co.kr/img/event/2022/b2b_icon_03.jpg"
+                            alt="스타벅스 모바일 카드 벌크 구매절차 이미지"
+                          />
+                        </div>
+                        <ul class="step-txt">
+                          <li>
+                            <strong
+                              >Step 1.스타벅스<a href="#none" class="link-green"
+                                >[회원가입]</a
+                              ></strong
+                            >
+                            스타벅스 홈페이지<br />개인 회원 로그인 후 신청 가능
+                          </li>
+                          <li>
+                            <strong>Step 2. 구매 신청</strong>
+                            신청일 낮 12시 이전 기준<br />익일까지 선택 가능,<br />당일
+                            다운로드 불가<br />
+                            <a href="#none" class="link-green"
+                              >[구매 신청 바로가기]</a
+                            >
+                          </li>
+                          <li>
+                            <strong>Step 3. 결제 진행</strong>
+                            ARS결제(법인카드 결제 가능)<br />또는 무통장 입금
+                          </li>
+                          <li>
+                            <strong
+                              >Step 4. 스타벅스 모바일 카드<br />다운로드</strong
+                            >
+                            예약 신청일부터<br />구매 내역 조회에서 다운로드
+                            가능<br />
+                            &#8251;발송 작업은 구매처에서 직접 진행<br />(BULK
+                            품목은 발송 지원이 없는 품목)
+                          </li>
+                        </ul>
+                      </section>
+                      <section class="consult-info">
+                        <h3>상담 안내</h3>
+                        <ul>
+                          <li class="list-disc">
+                            상담 및 운영 시간 : 평일 09 : 00 ~ 16 : 00 /
+                            점심시간 11 : 30 ~ 12 : 30 (토 / 일 / 공휴일 제외)
+                          </li>
+                          <li class="list-disc">
+                            e - mail : starbucksb2b@starbucks.co.kr
+                          </li>
+                        </ul>
+                        <span
+                          >* 자동메일의 경우, 접수 시 로그인 된 계정에 등록된
+                          이메일로 안내가 나갑니다. 답변은 운영시간 내에
+                          진행되며, 문의가 많을 경우 답변이 지연될 수
+                          있습니다.</span
+                        >
+                      </section>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </section>
-            <aside class="questions-box">
-              <h3>자주 하는 질문</h3>
-              <div>
-                <p>
-                  단체 및 기업 구매 안내에 대해 궁금하신 점이 생기셨나요?<br>
-                  자주 하는 질문을 통해 궁금증을 해소해 보세요.
-                </p>
-                <a href="#none" class="btn-gray">자주 하는 질문 바로가기</a>
-              </div>
-            </aside>
+              </section>
+              <aside class="questions-box">
+                <h3>자주 하는 질문</h3>
+                <div>
+                  <p>
+                    단체 및 기업 구매 안내에 대해 궁금하신 점이 생기셨나요?<br />
+                    자주 하는 질문을 통해 궁금증을 해소해 보세요.
+                  </p>
+                  <a href="#none" class="btn-gray">자주 하는 질문 바로가기</a>
+                </div>
+              </aside>
+            </div>
+            <nav class="cor-sales-subNavArea">
+              <ul class="cor-sales-subNav">
+                <li>
+                  <span
+                    >단체 및 기업 구매 안내<i class="xi-angle-down"></i
+                  ></span>
+                  <ul>
+                    <li class="list-disc"><a href="#none">MD 상품</a></li>
+                    <li class="list-disc"><a href="#none">실물카드</a></li>
+                    <li class="list-disc">
+                      <a href="#none">스타벅스 모바일 카드(MMS)</a>
+                    </li>
+                    <li class="list-disc">
+                      <a href="#none">스타벅스 모바일 카드(BULK)</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <span>단체 주문 배달 안내<i class="xi-angle-down"></i></span>
+                  <ul>
+                    <li class="list-disc">
+                      <a href="#none">단체 주문 배달 안내</a>
+                    </li>
+                    <li class="list-disc">
+                      <a href="#none">단체 주문 신청</a>
+                    </li>
+                    <li class="list-disc">
+                      <a href="#none">신청 내역 조회</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
           </div>
-          <nav class="cor-sales-subNavArea">
-            <ul class="cor-sales-subNav">
-              <li>
-                <span>단체 및 기업 구매 안내<i class="xi-angle-down"></i></span>
-                <ul>
-                  <li class="list-disc"><a href="#none">MD 상품</a></li>
-                  <li class="list-disc"><a href="#none">실물카드</a></li>
-                  <li class="list-disc"><a href="#none">스타벅스 모바일 카드(MMS)</a></li>
-                  <li class="list-disc"><a href="#none">스타벅스 모바일 카드(BULK)</a></li>
-                </ul>
-              </li>
-              <li>
-                <span>단체 주문 배달 안내<i class="xi-angle-down"></i></span>
-                <ul>
-                  <li class="list-disc"><a href="#none">단체 주문 배달 안내</a></li>
-                  <li class="list-disc"><a href="#none">단체 주문 신청</a></li>
-                  <li class="list-disc"><a href="#none">신청 내역 조회</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <footer>
-      <div class="footer-nav">
+      <footer>
+        <div class="footer-nav">
           <div class="footer-nav-inner">
-              <div class="footer-nav-col footer-mob-add">
-                  <p>customer service & ideas</p>
-                  <ul>
-                      <li><a href="#">자주 하는 질문</a></li>
-                      <li><a href="#">고객의 소리</a></li>
-                      <li><a href="#">스타벅스 이용 팁</a></li>
-                      <li><a href="#">고객 경험 설문조사</a></li>
-                      <li><a href="#">비회원 전자영수증 조회</a></li>
-                  </ul>
-              </div>
-              <div class="footer-nav-col">
-                  <p>company</p>
-                  <ul>
-                      <li><a href="#">한눈에 보기</a></li>
-                      <li><a href="#">스타벅스 사명</a></li>
-                      <li><a href="#">스타벅스 소개</a></li>
-                      <li><a href="#">컴플라이언스</a></li>
-                      <li><a href="#">국내 뉴스룸</a></li>
-                      <li><a href="#">세계의 스타벅스</a></li>
-                      <li><a href="#">글로벌 뉴스룸</a></li>
-                  </ul>
-              </div>
-              <div class="footer-nav-col">
-                  <p>corporate sales</p>
-                  <ul>
-                      <li><a href="#">단체 및 기업 구매 안내</a></li>
-                      <li><a href="#">단체 주문 배달 안내</a></li>
-                  </ul>
-              </div>
-              <div class="footer-nav-col">
-                  <p>partnership</p>
-                  <ul>
-                      <li><a href="#">신규 입점 제의</a></li>
-                      <li><a href="#">협력 고객사 등록신청</a></li>
-                      <li><a href="#">중개업체 확인</a></li>
-                  </ul>
-              </div>
-              <div class="footer-nav-col">
-                  <p>online community</p>
-                  <ul>
-                      <li><a href="#">페이스북</a></li>
-                      <li><a href="#">트위터</a></li>
-                      <li><a href="#">유튜브</a></li>
-                      <li><a href="#">인스타그램</a></li>
-                  </ul>
-              </div>
-              <div class="footer-nav-col">
-                  <p>recruit</p>
-                  <ul>
-                      <li><a href="#">채용 소개</a></li>
-                      <li><a href="#">채용 지원하기</a></li>
-                  </ul>
-              </div>
+            <div class="footer-nav-col footer-mob-add">
+              <p>customer service & ideas</p>
+              <ul>
+                <li><a href="#">자주 하는 질문</a></li>
+                <li><a href="#">고객의 소리</a></li>
+                <li><a href="#">스타벅스 이용 팁</a></li>
+                <li><a href="#">고객 경험 설문조사</a></li>
+                <li><a href="#">비회원 전자영수증 조회</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-col">
+              <p>company</p>
+              <ul>
+                <li><a href="#">한눈에 보기</a></li>
+                <li><a href="#">스타벅스 사명</a></li>
+                <li><a href="#">스타벅스 소개</a></li>
+                <li><a href="#">컴플라이언스</a></li>
+                <li><a href="#">국내 뉴스룸</a></li>
+                <li><a href="#">세계의 스타벅스</a></li>
+                <li><a href="#">글로벌 뉴스룸</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-col">
+              <p>corporate sales</p>
+              <ul>
+                <li><a href="#">단체 및 기업 구매 안내</a></li>
+                <li><a href="#">단체 주문 배달 안내</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-col">
+              <p>partnership</p>
+              <ul>
+                <li><a href="#">신규 입점 제의</a></li>
+                <li><a href="#">협력 고객사 등록신청</a></li>
+                <li><a href="#">중개업체 확인</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-col">
+              <p>online community</p>
+              <ul>
+                <li><a href="#">페이스북</a></li>
+                <li><a href="#">트위터</a></li>
+                <li><a href="#">유튜브</a></li>
+                <li><a href="#">인스타그램</a></li>
+              </ul>
+            </div>
+            <div class="footer-nav-col">
+              <p>recruit</p>
+              <ul>
+                <li><a href="#">채용 소개</a></li>
+                <li><a href="#">채용 지원하기</a></li>
+              </ul>
+            </div>
           </div>
-      </div>
-      <div class="footer-button">
+        </div>
+        <div class="footer-button">
           <a href="#">HOME</a>
           <a href="#">Sign In</a>
           <a href="#">Join Us</a>
-      </div>
-      <div class="footer-awards">
+        </div>
+        <div class="footer-awards">
           <div class="footer-awards-inner">
-              <ul>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_01.jpg" alt="여성가족부 2020 대한민국 일자리대상 여성가족부장관상"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_02.jpg" alt="행정안전부 2020 소방의 날 행정안전부장관 표창"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_03.jpg" alt="농림축산식품부 2020대한민국 커피산업대상 농림축산식품부 장관상"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_04.jpg" alt="산업통상지원부 2020 대한민국 중소중견기업혁신 대상 국회산업통상자원중소벤처위원회장상"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_05.jpg" alt="일자리위원회 2020 대한민국 일자리 유공 표창 대통령직속 일자리위원회 부위원장상"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_06.jpg" alt="동반성장위원회 2020 사랑나눔 사회공헌대상 동반성장위원회 위원장상"></a>
-                  </li>
-                  <li>
-                      <a href="#none"><img src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_07.jpg" alt="소비자중심경영 CCM인증획득"></a>
-                  </li>
-              </ul>
+            <ul class="pc-awards-slider">
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_01.jpg"
+                    alt="여성가족부 2020 대한민국 일자리대상 여성가족부장관상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_02.jpg"
+                    alt="행정안전부 2020 소방의 날 행정안전부장관 표창"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_03.jpg"
+                    alt="농림축산식품부 2020대한민국 커피산업대상 농림축산식품부 장관상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_04.jpg"
+                    alt="산업통상지원부 2020 대한민국 중소중견기업혁신 대상 국회산업통상자원중소벤처위원회장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_05.jpg"
+                    alt="일자리위원회 2020 대한민국 일자리 유공 표창 대통령직속 일자리위원회 부위원장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_06.jpg"
+                    alt="동반성장위원회 2020 사랑나눔 사회공헌대상 동반성장위원회 위원장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_07.jpg"
+                    alt="소비자중심경영 CCM인증획득"
+                /></a>
+              </li>
+            </ul>
+            <ul class="tab-awards-slider bxslider">
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_01.jpg"
+                    alt="여성가족부 2020 대한민국 일자리대상 여성가족부장관상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_02.jpg"
+                    alt="행정안전부 2020 소방의 날 행정안전부장관 표창"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_03.jpg"
+                    alt="농림축산식품부 2020대한민국 커피산업대상 농림축산식품부 장관상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_04.jpg"
+                    alt="산업통상지원부 2020 대한민국 중소중견기업혁신 대상 국회산업통상자원중소벤처위원회장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_05.jpg"
+                    alt="일자리위원회 2020 대한민국 일자리 유공 표창 대통령직속 일자리위원회 부위원장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_06.jpg"
+                    alt="동반성장위원회 2020 사랑나눔 사회공헌대상 동반성장위원회 위원장상"
+                /></a>
+              </li>
+              <li>
+                <a href="#none"
+                  ><img
+                    src="https://image.istarbucks.co.kr/img/event/2022/footer_award_2211_07.jpg"
+                    alt="소비자중심경영 CCM인증획득"
+                /></a>
+              </li>
+            </ul>
           </div>
-      </div>
-      <div class="copyright">
+        </div>
+        <div class="copyright">
           <div class="copyright-inner">
-              <ul class="copy-menu">
-                  <li><a href="#none" class="green-txt">개인정보처리방침</a></li>
-                  <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
-                  <li><a href="#none">홈페이지 이용약관</a></li>
-                  <li><a href="#none" class="green-txt">위치정보 이용약관</a></li>
-                  <li><a href="#none">스타벅스 카드 이용약관</a></li>
-                  <li><a href="#none">신세계 유니버스 클럽 이용약관</a></li>
-                  <li><a href="#none">비회원 이용약관</a></li>
-                  <li><a href="#none">My DT Pass 서비스 이용약관</a></li>
-                  <li><a href="#none">윤리경영 핫라인</a></li>
-              </ul>
-              <div class="footer-btns">
-                  <a href="#none">찾아오시는 길</a>
-                  <a href="#none">신규입점제의</a>
-                  <a href="#none">사이트 맵</a>
-              </div>
-              <ul class="company-info">
-                  <li>사업자등록번호 : 201-81-21515</li>
-                  <li>주식회사 에스씨케이컴퍼니 대표이사 : 손정현</li>
-                  <li>TEL : 1522-3232</li>
-                  <li>개인정보 보호책임자 : 이찬우</li>
-              </ul>
-              <p class="copyright-txt">&#169; <span class="year">2024</span> Starbucks Coffee Company. All Rights Reserved.</p>
+            <ul class="copy-menu">
+              <li><a href="#none" class="green-txt">개인정보처리방침</a></li>
+              <li><a href="#none">영상정보처리기기 운영관리 방침</a></li>
+              <li><a href="#none">홈페이지 이용약관</a></li>
+              <li><a href="#none" class="green-txt">위치정보 이용약관</a></li>
+              <li><a href="#none">스타벅스 카드 이용약관</a></li>
+              <li><a href="#none">신세계 유니버스 클럽 이용약관</a></li>
+              <li><a href="#none">비회원 이용약관</a></li>
+              <li><a href="#none">My DT Pass 서비스 이용약관</a></li>
+              <li><a href="#none">윤리경영 핫라인</a></li>
+            </ul>
+            <div class="footer-btns">
+              <a href="#none">찾아오시는 길</a>
+              <a href="#none">신규입점제의</a>
+              <a href="#none">사이트 맵</a>
+            </div>
+            <ul class="company-info">
+              <li>사업자등록번호 : 201-81-21515</li>
+              <li>주식회사 에스씨케이컴퍼니 대표이사 : 손정현</li>
+              <li>TEL : 1522-3232</li>
+              <li>개인정보 보호책임자 : 이찬우</li>
+            </ul>
+            <p class="copyright-txt">
+              &#169; <span class="year">2024</span> Starbucks Coffee Company.
+              All Rights Reserved.
+            </p>
           </div>
-      </div>
-  </footer>
-  </div>
+        </div>
+      </footer>
+    </div>
 
-  <script src="js/common.js"></script>
-</body>
+    <!-- 메인 페이지 기능 JS -->
+    <script src="js/common.js"></script>
+    <script src="js/subPage.js"></script>
+  </body>
 </html>
