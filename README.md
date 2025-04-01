@@ -103,9 +103,10 @@ setInterval(rollingUp, 4000);
 <br>
 <br>
 [관련 코드]<br>
-1️⃣ 해당 섹션에 active클래스가 추가되면 슬라이딩 애니메이션이 실행하도록 스타일링
-2️⃣ IntersectionObserver
-3️⃣
+1️⃣ 해당 섹션에 active클래스가 추가되면 슬라이딩 애니메이션이 실행하도록 스타일링 <br>
+setSlideAniObserver 함수<br>
+2️⃣ IntersectionObserver 객체 생성하여, observeTarget로 받은 관찰 대상(섹션)이 뷰포트에 보이는지 여부 체크(isIntersecting === true)<br>
+3️⃣ 화면에 보이면 해당 섹션에 애니메이션을 적용하기 위한 active 클래스를 추가하고, 화면에서 벗어나면 클래스 제거하도록<br>
 
 ```css
 .special-bean-wrap.active .bean-img-box{
@@ -138,11 +139,11 @@ setInterval(rollingUp, 4000);
 
 ```javascript
 // ====== special-bean / favorite / store slide animation =======
-setSlideAniWidthObserver('.special-bean-wrap');
-setSlideAniWidthObserver('.favorite-wrap');
-setSlideAniWidthObserver('.store-wrap');
+setSlideAniObserver('.special-bean-wrap');
+setSlideAniObserver('.favorite-wrap');
+setSlideAniObserver('.store-wrap');
 
-function setSlideAniWidthObserver(observeTarget){
+function setSlideAniObserver(observeTarget){
     const targetSection = document.querySelector(observeTarget);
     const observer = new IntersectionObserver(function(entries){
         console.log(entries)
