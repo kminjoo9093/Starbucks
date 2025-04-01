@@ -95,7 +95,126 @@ setInterval(rollingUp, 4000);
 [구현 실패 원인 분석]<br>
 🆖 업데이트된 요소들의 순서를 실제 dom에 반영하지 않은 점<br>
 🆖 index 변수는 forEach문 안에서만 일시적으로 유효하기 때문에 수동으로 수정하더라도 index값이 다음 반복에는 영향을 미치지 않는다<br>
+<br><br>
+### 2. 메인페이지 슬라이드 애니메이션
 
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/11399259-0d61-4195-9e24-9ef0d8b0338d" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/cae67b9c-5c08-4516-a759-621d8aea61fc" />
+<br>
+<br>
+[관련 코드]<br>
+1️⃣ 해당 섹션에 active클래스가 추가되면 슬라이딩 애니메이션이 실행하도록 스타일링
+2️⃣ IntersectionObserver
+3️⃣
 
+```css
+.special-bean-wrap.active .bean-img-box{
+    animation: bean-img-ani 1s ease-out forwards;
+}
+.special-bean-wrap.active .bean-text-wrap{
+    animation: bean-text-ani 1s ease-out forwards;
+}
+@keyframes bean-img-ani {
+    0%{
+        opacity: 0;
+        left: 0%;
+    }
+    100%{
+        opacity: 1;
+        left: 22%;
+    }
+}
+@keyframes bean-text-ani {
+    0%{
+        opacity: 0;
+        right: 0%;
+    }
+    100%{
+        opacity: 1;
+        right: 9%;
+    }
+}
+```
+
+```javascript
+// ====== special-bean / favorite / store slide animation =======
+setSlideAniWidthObserver('.special-bean-wrap');
+setSlideAniWidthObserver('.favorite-wrap');
+setSlideAniWidthObserver('.store-wrap');
+
+function setSlideAniWidthObserver(observeTarget){
+    const targetSection = document.querySelector(observeTarget);
+    const observer = new IntersectionObserver(function(entries){
+        console.log(entries)
+        entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+                targetSection.classList.add('active');
+            } else {
+                targetSection.classList.remove('active');
+            }
+        })
+    });
+    observer.observe(targetSection);
+}
+```
+
+<br><br>
+
+### 3. 서브페이지 탭 메뉴
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/b773716a-8684-407f-88e8-2d716d68476a" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/3fadb0dc-0871-4494-888a-d31ac5f9e053" />
+<br>
+1️⃣ 탭 메뉴의 사용자 정의 속성 data-tab의 값과 탭 컨텐츠의 id 값을 연결
+<br>
+
+[ html ]
+```html
+<div class="product-tab-area">
+  <ul class="product-tabMenu">
+    <li data-tab="tab1" class="active">MD 상품</li>
+    <li data-tab="tab2">실물카드</li>
+    <li data-tab="tab3">스타벅스 모바일 카드(MMS)</li>
+    <li data-tab="tab4">스타벅스 모바일 카드(BULK)</li>
+  </ul>
+  <div class="product-tab-content">
+    <div id="tab1" class="tab active">
+      ...
+    </div>
+    <div id="tab2" class="tab">
+      ...
+    </div>
+    <div id="tab3" class="tab">
+      ...
+    </div>
+    <div id="tab4" class="tab">
+      ...
+    </div>
+  </div>
+</div>
+```
+
+[ js ]
+
+```js
+const productTabMenus = document.querySelectorAll('.product-tabMenu li');
+productTabMenus.forEach((menu)=>{
+  menu.addEventListener('click', ()=>{
+    // menu style change
+    productTabMenus.forEach((tab)=>{
+      tab.classList.remove('active');
+    })
+    menu.classList.add('active');
+    // content change
+    const tabId = menu.getAttribute('data-tab');
+    document.querySelectorAll('.product-tab-content .tab').forEach((tab)=>{
+      tab.style.display = 'none';
+    })
+    document.getElementById(tabId).style.display = 'block';
+  })
+})
+```
 <br><br><br>
+
+## 이슈
+
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/bd193daa-744c-41f1-8547-e52c546fe66c" />
