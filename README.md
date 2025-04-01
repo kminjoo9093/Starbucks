@@ -217,5 +217,86 @@ productTabMenus.forEach((menu)=>{
 <br><br><br>
 
 ## 이슈
+### 1. 애니메이션 적용 시 버튼 위치 설정
+메인페이지 store섹션이 뷰포트에 들어올 때 텍스트와 매장찾기 버튼이 애니메이션으로 우측에서 슬라이드되어 들어오는데<br>
+애니메이션이 진행되는 과정에서 매장찾기 버튼의 너비가 변하는 현상 발생
+<br><br>
+**해결**<br>
+: 위치를 left가 아닌 translateX로 설정<br>
+애니메이션이 적용되는 동안 레이아웃이 변동하게 되면 요소의 크기나 위치가 예기치 않게 변화할 수 있는데<br>
+transform은 레이아웃 계산에 영향을 주지 않으므로 크기나 위치가 예기치 않게 변하는 문제를 피할 수 있다
+<br><br>
 
+### 2. 슬라이더 중앙 정렬 with bxslider
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/bd193daa-744c-41f1-8547-e52c546fe66c" />
+<br>
+bxslider는 슬라이드를 중앙정렬하는 기본 옵션이 없음으로 직접 구현 필요
+<br><br>
+[구현 과정에서 시도한 방식]
+❎ 뷰포트 너비에서 슬라이드 너비를 뺀 후 2로 나눈 지점에 슬라이드를 포지셔닝 시키는 setCenterSlide함수를 <br>
+  onSliderLoad, onSlideAfter의 콜백함수로 설정<br>
+=> 처음에는 잘 작동하지만 슬라이드 전환 후 무너지는 현상<br>
+
+```js
+$('.promotion-slider').bxSlider({
+  auto: true,
+      autoControls: true,
+      stopAutoOnClick: true,
+      autoControlsCombine: true,
+      pager: true,
+      slideWidth: 800,
+      minSlides: 1,
+      maxSlides: 1,
+      moveSlides: 1,
+      slideMargin: 10,
+  onSliderLoad: function(){   
+      setCenterSlide();
+  },
+  onSlideAfter: function(){
+      setCenterSlide();
+  }
+})
+
+function setCenterSlide (){
+    const slideItems = document.querySelectorAll('.promotion-slider .slide');
+    slideItems.forEach((slide)=>{
+        const slideWidth = slide.offsetWidth;
+        slide.style.left = `${window.innerWidth - slideWidth / 2}px`;
+    })
+};
+```
+
+<br>
+
+**해결**<br>
+1️⃣ bx-viewport, bx-wrapper 사이즈를 슬라이드 하나의 크기와 동일하게 설정 후 중앙 정렬<br>
+2️⃣ overflow: visible; 로 설정해서 활성화된 슬라이드 외 전,후 슬라이드가 보이도록 설정<br>
+3️⃣ 보이는 슬라이드 개수 1로 설정<br>
+<br>
+
+```js
+$('.promotion-slider').bxSlider({
+    auto: true,
+    autoControls: true,
+    stopAutoOnClick: true,
+    autoControlsCombine: true,
+    pager: true,
+    slideWidth: 800,
+    minSlides: 1,
+    maxSlides: 1,
+    moveSlides: 1,
+    slideMargin: 10,
+    onSliderLoad: function(){
+        const allSlides = document.querySelectorAll('.promotion-slider .slide');
+        allSlides[1].classList.add('active');
+    },
+    onSlideAfter: function($slideElement, oldIndex, newIndex) {
+        $('.promotion-slider .slide').removeClass('active');
+        $slideElement.addClass('active');
+    }
+})
+```
+<br>
+❗️ onSlideAfter콜백함수에서 현재 활성화된 슬라이드를 가리키는 매개변수는 $slideElement 이다
+
+
