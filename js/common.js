@@ -1,26 +1,26 @@
 // ===== header : search button =====
-const searchBtn = document.querySelector('.top_search-btn');
-const searchInput = document.querySelector('.search-input');
-const searchIcon = document.querySelector('.top_search-icon');
+const searchBtn = document.querySelector(".top_search-btn");
+const searchInput = document.querySelector(".search-input");
+const searchIcon = document.querySelector(".top_search-icon");
 
-searchBtn.addEventListener('click', addSearchInput);
-function addSearchInput(){
-    searchBtn.classList.add('active');
+searchBtn.addEventListener("click", addSearchInput);
+function addSearchInput() {
+  searchBtn.classList.add("active");
 }
 
 // ===== header : slide menu =====
-$(function(){
-    let dataNav;
-    let selectedMenu;
-    $('.main-nav-link').mouseover(function(){
-        dataNav = $(this).attr('data-nav'); 
-        selectedMenu = $('#' + dataNav);
-        selectedMenu.stop().slideDown(400);
-    })
-    $('.main-nav-link').mouseleave(function(){
-        selectedMenu.stop().slideUp(400);
-    })
-})
+$(function () {
+  let dataNav;
+  let selectedMenu;
+  $(".main-nav-link").mouseover(function () {
+    dataNav = $(this).attr("data-nav");
+    selectedMenu = $("#" + dataNav);
+    selectedMenu.stop().slideDown(400);
+  });
+  $(".main-nav-link").mouseleave(function () {
+    selectedMenu.stop().slideUp(400);
+  });
+});
 
 // ======== RESPONSIVE jQuery : MENU BUTTON CLICK ========
 $(".mob-menu-btn").click(function () {
@@ -35,8 +35,9 @@ $(".mob-menu-item").click(function () {
   $(this).next("ul").stop().slideToggle();
 });
 
-// ======= line-notice section : notice headline slideUp =======
-function slideUp() {
+// ======= line-notice section : notice headline rolling =======
+
+function rollingUp() {
   const linkContainer = document.querySelector(".notice-contents-ani");
   if(!linkContainer) return;
   const linksArray = Array.from(linkContainer.querySelectorAll("a"));
@@ -45,30 +46,26 @@ function slideUp() {
 
   linksArray.forEach((link, index) => {
     if (index > 0) {
-      // 첫 번째 요소가 아닌 경우, 위로 이동
       link.style.transform = `translateY(-${linkHeight}px)`;
       link.style.transition = `transform 0.3s ease-in`;
     }
   });
 
   setTimeout(() => {
-    // 첫 번째 링크가 맨 아래로 이동한 후, 애니메이션 초기화
-    const firstLink = linksArray.shift(); // 첫 번째 요소를 제거
-    linksArray.push(firstLink); // 링크 배열에 다시 추가
+    const firstLink = linksArray.shift();
+    linksArray.push(firstLink);
 
     linksArray.forEach((link) => {
-      // 실제 dom에 변경된 링크 순서를 반영
       linkContainer.appendChild(link);
-      // 모든 링크의 위치를 초기화
       link.style.transform = "translateY(0)";
     });
   }, 300);
 }
 
-setInterval(slideUp, 4000);
+setInterval(rollingUp, 4000);
 
 // ======== footer year =======
-const year = document.querySelector('.year');
+const year = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 year.textContent = currentYear;
 

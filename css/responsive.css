@@ -237,24 +237,31 @@
     overflow: auto;
   }
   .mob-close-btn {
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
     border: none;
     background: none;
     position: absolute;
     top: 5rem;
-    left: -10%;
+    left: -12%;
     cursor: pointer;
   }
   .mob-close-btn img {
+    width: 100%;
     transition: 0.7s;
   }
   .mob-menu-wrap.active .mob-close-btn img {
     transform: rotate(360deg);
   }
   .mob-search {
-    text-align: center;
     background: var(--brown_2d);
     padding: 3rem 0;
     border-bottom: .1rem solid var(--gray_22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
   }
   .mob-search input {
     width: 47%;
@@ -262,8 +269,6 @@
     border: none;
     border-radius: 0.4rem;
     padding: 1rem;
-    vertical-align: top;
-    margin-right: 1.5rem;
     outline-color: orange;
   }
   .mob-search-btn {
@@ -1079,6 +1084,29 @@
 }
 
 @media (max-width: 540px) {
+  /* header */
+  .mob-menu-list li{
+    font-size: 1.6rem;
+  }
+  .mob-search{
+    gap: 0.5rem;
+  }
+  .mob-search input {
+    width: 47%;
+    height: 3rem;
+  }
+  .mob-search-btn {
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.8rem;
+    padding-block: 0;
+  }
+  .mob-close-btn {
+    width: 2.5rem;
+    top: 3rem;
+    left: -15%;
+  }
+  /* main */
   .rewards-info h2 {
     font-size: 2rem;
   }

@@ -28,16 +28,16 @@ const productTabMenus = document.querySelectorAll('.product-tabMenu li');
 productTabMenus.forEach((menu)=>{
   menu.addEventListener('click', ()=>{
     // menu style change
-    productTabMenus.forEach((sibling)=>{
-      sibling.classList.remove('active');
+    productTabMenus.forEach((tab)=>{
+      tab.classList.remove('active');
     })
     menu.classList.add('active');
     // content change
-    const tabNum = menu.getAttribute('data-tab');
+    const tabId = menu.getAttribute('data-tab');
     document.querySelectorAll('.product-tab-content .tab').forEach((tab)=>{
       tab.style.display = 'none';
     })
-    document.getElementById(tabNum).style.display = 'block';
+    document.getElementById(tabId).style.display = 'block';
   })
 })
 

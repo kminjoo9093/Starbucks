@@ -15,8 +15,6 @@
     display: none;
 }
 .main-header-wrap{
-    /* max-width: 110rem;
-    margin: 0 auto; */
     height: 12rem;
     position: relative;
     display: flex;
@@ -606,7 +604,6 @@ br.tab, br.mob{
 .mob-bean-text{
     display: none;
 }
-
 @keyframes bean-img-ani {
     0%{
         opacity: 0;

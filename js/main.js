@@ -33,11 +33,11 @@ function rotateArrow(item){
 }
 
 // ====== special-bean / favorite / store slide animation =======
-setSlideAniWidthObserver('.special-bean-wrap');
-setSlideAniWidthObserver('.favorite-wrap');
-setSlideAniWidthObserver('.store-wrap');
+setSlideAniObserver('.special-bean-wrap');
+setSlideAniObserver('.favorite-wrap');
+setSlideAniObserver('.store-wrap');
 
-function setSlideAniWidthObserver(observeTarget){
+function setSlideAniObserver(observeTarget){
     const targetSection = document.querySelector(observeTarget);
     const observer = new IntersectionObserver(function(entries){
         console.log(entries)
