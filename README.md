@@ -2,7 +2,7 @@
 <br>
 메인페이지, 서브페이지, 로그인페이지를 반응형으로 제작
 <br><br>
-link: 
+link: https://kminjoo9093.github.io/Starbucks/
 <br><br>
 <img src="https://github.com/user-attachments/assets/a97529a1-d576-4982-b6bb-ca7c2d5eca6f" height="250">
 <img src="https://github.com/user-attachments/assets/88b35970-a907-48a2-8fd9-47c771172bd6" height="250">
