@@ -71,6 +71,7 @@ year.textContent = currentYear;
 
 // ======== RESPONSIVE jQuery : FOOTER ACCORDION ========
 const screenWidth = $(window).width();
+
 if (screenWidth < 780) {
   $(".footer-nav-col p").click(function () {
     $(this).next("ul").stop().slideToggle();
@@ -90,20 +91,13 @@ $("footer .bxslider").bxSlider({
   minSlides: 1,
   maxSlides: 3,
   onSliderLoad: function () {
-    if (screenWidth < 1120 && screenWidth < 640) {
-      $(this).bxSlider({
-        slideWidth: 200,
-        minSlides: 3,
-        maxSlides: 3,
-        moveSlides: 1,
-      });
-    } else if (screenWidth < 640) {
+    if (screenWidth < 640) {
       $(this).bxSlider({
         slideWidth: 400,
         minSlides: 1,
         maxSlides: 1,
         moveSlides: 1,
       });
-    }
+    } 
   },
 });
