@@ -94,6 +94,14 @@ button{
     color: inherit;
     cursor: pointer;
 }
+.a11y-hidden{
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
 
 /* ============= common style ========== */
 .section-inner-width{
