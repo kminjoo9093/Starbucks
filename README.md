@@ -1,7 +1,7 @@
 # 스타벅스 웹사이트 클론코딩
 <br>
 메인페이지, 서브페이지, 로그인페이지를 반응형으로 제작<br>
-제작시기 : 2024.12
+제작시기 : 2024.12 <br><br>
 link: https://kminjoo9093.github.io/Starbucks/
 <br><br>
 <img src="https://github.com/user-attachments/assets/a97529a1-d576-4982-b6bb-ca7c2d5eca6f" height="250">
