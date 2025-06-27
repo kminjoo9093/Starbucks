@@ -40,7 +40,6 @@ setSlideAniObserver('.store-wrap');
 function setSlideAniObserver(observeTarget){
     const targetSection = document.querySelector(observeTarget);
     const observer = new IntersectionObserver(function(entries){
-        console.log(entries)
         entries.forEach((entry)=>{
             if(entry.isIntersecting){
                 targetSection.classList.add('active');

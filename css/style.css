@@ -804,30 +804,27 @@ br.mob {
   left: 50%;
   z-index: 2;
 }
-.store-wrap.active :is(.store-text-1, .store-text-2, .store-text-box a) {
+.store-wrap.active :is(.store-text-1, .store-text-2) {
   animation: store-slide 1s linear forwards;
 }
-.store-text-1 {
+.store-wrap.active .store-text-box a {
+  animation: store-slide-button 1s linear forwards;
+}
+.store-text-1, .store-text-2, .store-text-box a{
   position: absolute;
-  top: 27%;
   left: 0;
-  transform: translateX(50rem);
   z-index: 2;
+}
+.store-text-1 {
+  top: 27%;
+  transform: translateX(50rem);
 }
 .store-text-2 {
-  position: absolute;
   top: 45%;
-  left: 0;
   transform: translateX(55rem);
-  z-index: 2;
 }
 .store-text-box a {
-  position: absolute;
-  left: 0;
   top: 75%;
-  transform: translateX(60rem);
-  z-index: 2;
-  transition: all 0.4s;
 }
 .mob-store-text-box {
   display: none;
@@ -841,6 +838,17 @@ br.mob {
     opacity: 1;
   }
 }
+@keyframes store-slide-button {
+  0% {
+    opacity: 0;
+    transform: translateX(60rem);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 
 /* ============ footer =========== */
 footer {
